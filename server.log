@@ -1,0 +1,94 @@
+
+> balneariocom@0.1.0 dev
+> next dev
+
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/juancartagena/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /Users/juancartagena/CodeProjects/balneariocom/package-lock.json
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.142:3000
+
+✓ Starting...
+✓ Ready in 579ms
+ GET / 200 in 753ms (compile: 616ms, render: 137ms)
+ GET /images/icon-192.png 404 in 66ms (compile: 31ms, render: 35ms)
+✓ Compiled in 57ms
+✓ Compiled in 21ms
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 23ms
+ GET / 200 in 187ms (compile: 36ms, render: 151ms)
+ GET /images/icon-192.png 404 in 32ms (compile: 1571µs, render: 30ms)
+✓ Compiled in 34ms
+✓ Compiled in 77ms
+ GET / 200 in 59ms (compile: 21ms, render: 38ms)
+ GET / 200 in 9ms (compile: 1174µs, render: 8ms)
+✓ Compiled in 31ms
+✓ Compiled in 76ms
+✓ Compiled in 81ms
+✓ Compiled in 46ms
+✓ Compiled in 31ms
+✓ Compiled in 27ms
+✓ Compiled in 34ms
+✓ Compiled in 44ms
+✓ Compiled in 43ms
+✓ Compiled in 27ms
+✓ Compiled in 27ms
+✓ Compiled in 35ms
+✓ Compiled in 50ms
+✓ Compiled in 47ms
+✓ Compiled in 46ms
+✓ Compiled in 46ms
+✓ Compiled in 31ms
+✓ Compiled in 126ms
+✓ Compiled in 97ms
+✓ Compiled in 44ms
+✓ Compiled in 110ms
+✓ Compiled in 48ms
+ GET / 200 in 146ms (compile: 48ms, render: 98ms)
+ GET /images/icon-192.png 404 in 96ms (compile: 43ms, render: 54ms)
+✓ Compiled in 29ms
+ GET / 200 in 153ms (compile: 47ms, render: 106ms)
+ GET /images/icon-192.png 404 in 32ms (compile: 4ms, render: 28ms)
+ GET /programas 200 in 128ms (compile: 82ms, render: 46ms)
+✓ Compiled in 30ms
+✓ Compiled in 105ms
+✓ Compiled in 33ms
+✓ Compiled in 28ms
+ GET /programas 200 in 217ms (compile: 13ms, render: 204ms)
+ GET /images/icon-192.png 404 in 28ms (compile: 3ms, render: 24ms)
+ GET / 200 in 70ms (compile: 47ms, render: 24ms)
+✓ Compiled in 32ms
+✓ Compiled in 26ms
+ GET / 200 in 53ms (compile: 30ms, render: 24ms)
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 27ms
+ GET / 200 in 158ms (compile: 22ms, render: 136ms)
+ GET /images/icon-192.png 404 in 28ms (compile: 3ms, render: 25ms)
+✓ Compiled in 28ms
+ GET / 200 in 39ms (compile: 20ms, render: 19ms)
+ GET / 200 in 134ms (compile: 6ms, render: 128ms)
+ GET /images/icon-192.png 404 in 27ms (compile: 3ms, render: 24ms)
+✓ Compiled in 29ms
+✓ Compiled in 32ms
+ GET / 200 in 182ms (compile: 55ms, render: 127ms)
+ GET /css/support_parent.css 404 in 51ms (compile: 9ms, render: 42ms)
+ GET /js/twint_ch.js 404 in 44ms (compile: 5ms, render: 38ms)
+ GET /js/lkk_ch.js 404 in 45ms (compile: 6ms, render: 39ms)
+✓ Compiled in 33ms
+✓ Compiled in 32ms
+ GET / 200 in 200ms (compile: 64ms, render: 137ms)
+ GET /images/icon-192.png 404 in 27ms (compile: 4ms, render: 23ms)
+✓ Compiled in 62ms
+✓ Compiled in 18ms
+✓ Compiled in 104ms
+ GET / 200 in 267ms (compile: 127ms, render: 140ms)
+ GET /.env 404 in 187ms (compile: 100ms, render: 87ms)
+ GET / 200 in 82ms (compile: 12ms, render: 70ms)
+⚠ Cross origin request detected from mac-mini-de-juan.tailc3d3c6.ts.net to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET / 200 in 74ms (compile: 7ms, render: 67ms)

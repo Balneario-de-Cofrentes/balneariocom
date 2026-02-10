@@ -1,0 +1,311 @@
+{
+  "source": "balneario.com (Framer site)",
+  "extracted_date": "2026-02-08",
+  "total_images": 113,
+  "total_icons": 6,
+  "categories": {
+    "hero": {
+      "description": "Main hero/banner images for the homepage",
+      "files": {
+        "hero-equipo-medico.jpg": {
+          "original": "https://framerusercontent.com/images/KGcN4dzmCAJ6t8jJTGVJlhWrw.jpg",
+          "alt": "Equipo medico del Balneario de Cofrentes",
+          "dimensions": "6232x4155",
+          "pages": ["home"]
+        },
+        "hero-piscina-termal.jpg": {
+          "original": "https://framerusercontent.com/images/cYt8viRiQ2TXJLBDYjngKzHWCxw.jpg",
+          "alt": "El Balneario mas medicalizado de Espana, piscina termal",
+          "dimensions": "1650x844",
+          "pages": ["home"]
+        },
+        "mujer-piscina-termal.jpg": {
+          "original": "https://framerusercontent.com/images/j6xw7F6WoZSqfPhm0GcI2wIrJ4g.jpg",
+          "alt": "Mujer saliendo de piscina termal",
+          "dimensions": "1110x694",
+          "pages": ["home"]
+        },
+        "og-image.jpg": {
+          "original": "https://framerusercontent.com/images/I6oicrM3DWwO5Gby8u3CVmhFIjY.jpg",
+          "alt": "Open Graph / social sharing image",
+          "pages": ["all"]
+        }
+      }
+    },
+    "people": {
+      "description": "Team photos, portraits, and people images",
+      "files": {
+        "dr-miguel-angel-portrait.jpg": {
+          "original": "https://framerusercontent.com/images/Pl1vgZxccp9oCA3QTQ3yYDDaqFw.jpg",
+          "alt": "Dr Miguel Angel Fernandez Toran - 30 anos en salud integrativa, especialista en longevidad",
+          "dimensions": "1680x1120",
+          "pages": ["home"]
+        },
+        "dr-miguel-angel-square.webp": {
+          "original": "https://framerusercontent.com/images/cdrZzbDnxnpmVZRnJp9X7VsaHZg.webp",
+          "alt": "Dr Miguel Angel Fernandez Toran (square crop)",
+          "dimensions": "780x828",
+          "pages": ["home"]
+        },
+        "about-equipo-medico.jpg": {
+          "original": "https://framerusercontent.com/images/dDdBzGLptpgTzZ16Ig1zRCHeI.jpg",
+          "alt": "Equipo medico del Balneario de Cofrentes",
+          "dimensions": "6720x4480",
+          "pages": ["about"]
+        },
+        "about-dr-miguel-angel.jpg": {
+          "original": "https://framerusercontent.com/images/g00OBepsBCcam1yO94l8440Ims.jpg",
+          "alt": "Doctor Miguel Angel Fernandez, director medico",
+          "dimensions": "1680x1120",
+          "pages": ["about"]
+        },
+        "about-clara-fernandez-directora.jpg": {
+          "original": "https://framerusercontent.com/images/xKIJMZEtTMZ44Ev8IK38VEcFA.jpg",
+          "alt": "Clara Fernandez, Directora General del Balneario de Cofrentes",
+          "dimensions": "1024x1024",
+          "pages": ["about"]
+        },
+        "about-team-placeholder.png": {
+          "original": "https://framerusercontent.com/images/qMocpn4IRPE2teTTs1MZRuctY7c.png",
+          "alt": "Team placeholder",
+          "dimensions": "1803x1478",
+          "pages": ["about"]
+        }
+      }
+    },
+    "logos_branding": {
+      "description": "Logos, partner strips, and branding elements",
+      "files": {
+        "logo-balneario.png": {
+          "original": "https://framerusercontent.com/images/LC6NhLjLTOlJx6iWrskidYzvsU.png",
+          "alt": "Logo",
+          "dimensions": "1561x741",
+          "pages": ["all"]
+        },
+        "logo-strip-wide.png": {
+          "original": "https://framerusercontent.com/images/GectkQi9TKEA0rVLjx3NnB0Qw.png",
+          "alt": "Partner/certification logo strip (wide)",
+          "dimensions": "2099x195",
+          "pages": ["all"]
+        },
+        "logo-strip-partners.png": {
+          "original": "https://framerusercontent.com/images/GnQrkyD0rWwbvbZgNUsgAF8xbjk.png",
+          "alt": "Partner logo strip",
+          "dimensions": "1724x200",
+          "pages": ["all"]
+        },
+        "footer-pattern.png": {
+          "original": "https://framerusercontent.com/images/vcUCe4rZNxmdJZGD3rR0qJiZ9ZU.png",
+          "alt": "Footer decorative pattern",
+          "dimensions": "9213x1619",
+          "pages": ["all"]
+        },
+        "footer-badge.png": {
+          "original": "https://framerusercontent.com/images/vQiU5w3Dmp7kOHADv5MEfmBuvsA.png",
+          "alt": "Footer badge/seal",
+          "dimensions": "432x302",
+          "pages": ["all"]
+        }
+      }
+    },
+    "products": {
+      "description": "Product/cosmetic images from homepage carousel",
+      "files": {
+        "product-cream.webp": {
+          "original": "https://framerusercontent.com/images/7wsqtbbmupBJMOuE90czk8hnS8.webp",
+          "alt": "Cream",
+          "pages": ["home"]
+        },
+        "product-coffee-pack.webp": {
+          "original": "https://framerusercontent.com/images/RjycFwwbKPmTdH19lIYQfC8Gw.webp",
+          "alt": "Coffee Pack",
+          "pages": ["home"]
+        },
+        "product-bottle.webp": {
+          "original": "https://framerusercontent.com/images/YgvBJ2WCDbsHm2o4QmrRyQMsH2Q.webp",
+          "alt": "Bottle",
+          "pages": ["home"]
+        }
+      }
+    },
+    "maps": {
+      "description": "Balneario campus/facility maps",
+      "files": {
+        "mapa-balneario.webp": {
+          "original": "https://framerusercontent.com/images/aoXBmBwCM5T414ORc2Vkr725G4E.webp",
+          "alt": "Mapa del Balneario de Cofrentes",
+          "dimensions": "1350x962",
+          "pages": ["home", "instalaciones"]
+        },
+        "mapa-balneario-small.webp": {
+          "original": "https://framerusercontent.com/images/gu5UZTu9KycSsNPldxQN69byssU.webp",
+          "alt": "Mapa del Balneario (small version)",
+          "dimensions": "902x643",
+          "pages": ["home"]
+        }
+      }
+    },
+    "icons": {
+      "description": "UI icons, favicons, and SVG elements",
+      "path": "public/icons/",
+      "files": {
+        "favicon.png": {
+          "original": "https://framerusercontent.com/images/zmT3XOfhkS6TbXYtjNfN5FBY1U.png",
+          "note": "Primary favicon"
+        },
+        "favicon-large.png": {
+          "original": "https://framerusercontent.com/images/RQkMfrMuHUoeCTCpmr0gSh78Jk.png",
+          "note": "Large favicon variant"
+        },
+        "apple-touch-icon.png": {
+          "original": "https://framerusercontent.com/images/cVRwBj5IJlVgZK4JN1RvPRTHQ.png",
+          "note": "Apple touch icon"
+        },
+        "arrow-next.svg": {
+          "original": "https://framerusercontent.com/images/11KSGbIZoRSg4pjdnUoif6MKHI.svg",
+          "note": "Next arrow for carousel/slider"
+        },
+        "arrow-back.svg": {
+          "original": "https://framerusercontent.com/images/6tTbkXggWgQCAJ4DO2QEdXXmgM.svg",
+          "note": "Back arrow for carousel/slider"
+        },
+        "bg-pattern.svg": {
+          "original": "https://framerusercontent.com/images/zkZcqLYKrbf3IcoLGmkQF4odXvY.svg",
+          "note": "Background decorative pattern"
+        }
+      }
+    },
+    "decorative_icons": {
+      "description": "Decorative icons used in about/programas pages (512x512 PNGs)",
+      "files": {
+        "icon-decorative-1.png": "https://framerusercontent.com/images/1vIETtl3h8aKjVgqe4p63fK0n4.png",
+        "icon-decorative-2.png": "https://framerusercontent.com/images/HltzevxWtlxEPmzQswqocHf5oc.png",
+        "icon-decorative-3.png": "https://framerusercontent.com/images/jzsd2kZLAuNoY0EzkA3sDu0aOTc.png",
+        "icon-decorative-4.png": "https://framerusercontent.com/images/ujVvM2n6ZUIO4Y2XJuDXOojLRw.png",
+        "icon-decorative-5.png": "https://framerusercontent.com/images/VzwzXFqv7RaWTBx4CXTwGrHgPg.png"
+      }
+    },
+    "instalaciones": {
+      "description": "Facilities page - hotel, pools, treatments, dining, activities, nature",
+      "subcategories": {
+        "hotel_buildings": [
+          "instalaciones-recepcion.jpg",
+          "instalaciones-habitacion.jpg",
+          "instalaciones-hotel-noche.webp",
+          "instalaciones-hotel-antiguo.webp",
+          "instalaciones-clinica-centro-termal.webp"
+        ],
+        "pools_thermal": [
+          "instalaciones-piscina.jpg",
+          "instalaciones-piscina-termal.webp",
+          "instalaciones-piscina-termal-hotel.png",
+          "instalaciones-piscina-recreativa.webp",
+          "instalaciones-vaporarium.webp",
+          "instalaciones-terapia-termal.webp",
+          "instalaciones-terapia-acuatica.jpg"
+        ],
+        "treatments_medical": [
+          "instalaciones-masaje-facial.webp",
+          "instalaciones-masaje-piernas.jpg",
+          "instalaciones-parafango.jpg",
+          "instalaciones-dermapen.webp",
+          "instalaciones-neuromodulacion.png",
+          "instalaciones-consulta-longevidad.jpg",
+          "instalaciones-analiticas.jpg",
+          "instalaciones-test-medico.webp",
+          "instalaciones-medico-vertical.jpg"
+        ],
+        "restaurant": [
+          "instalaciones-restaurante-mesa.jpg",
+          "instalaciones-restaurante.webp",
+          "instalaciones-restaurante-mesa-2.webp"
+        ],
+        "activities": [
+          "instalaciones-aquagym.webp",
+          "instalaciones-entrenamiento-funcional.jpg",
+          "instalaciones-yoga.png",
+          "instalaciones-ejercicios-animacion.webp",
+          "instalaciones-actividad-recreativa.png",
+          "instalaciones-ajedrez.jpg"
+        ],
+        "excursions": [
+          "instalaciones-excursion.jpg",
+          "instalaciones-excursion-barco.jpg",
+          "instalaciones-recorrido-bote.jpg",
+          "instalaciones-mujer-bote.jpg",
+          "instalaciones-rafting.png",
+          "instalaciones-excursion-tren.jpg",
+          "instalaciones-tiro-arco.jpeg",
+          "instalaciones-maderada.jpg"
+        ],
+        "nature_views": [
+          "instalaciones-vista-alrededores.jpeg",
+          "instalaciones-terraza-vista.webp",
+          "instalaciones-fuente.jpg",
+          "instalaciones-iglesia.webp"
+        ],
+        "events": [
+          "instalaciones-concierto.png",
+          "instalaciones-conferencia-longevidad.webp",
+          "instalaciones-proyecto-vitalism.jpg",
+          "instalaciones-evento-salud.png",
+          "instalaciones-zona-recreacion.webp"
+        ]
+      }
+    },
+    "clinica": {
+      "description": "Longevity clinic page - medical treatments and therapies",
+      "files": [
+        "clinica-doctores-analiticas.jpg",
+        "clinica-masaje-paciente.jpg",
+        "clinica-sueros-intravenosos.webp",
+        "clinica-fisioterapia.webp",
+        "clinica-balneoterapia-respiratoria.webp",
+        "clinica-ozonoterapia.webp",
+        "clinica-dermapen.webp",
+        "clinica-infiltracion-hombro.webp",
+        "clinica-plasmaferesis.webp",
+        "clinica-neuromodulacion.webp",
+        "clinica-bioimpedancia-test.webp",
+        "clinica-terapia-acuatica.webp",
+        "clinica-parafangos.webp",
+        "clinica-entrenamiento-funcional.jpg",
+        "clinica-diagram.png"
+      ]
+    },
+    "programas": {
+      "description": "Programs page - longevity and wellness programs",
+      "files": [
+        "programas-tratamiento-facial.webp",
+        "programas-aquagym-hombre.webp",
+        "programas-medicos-analiticas.webp",
+        "programas-termalismo-valenciano.webp",
+        "programas-terapia-acuatica.webp",
+        "programas-masaje-facial.jpg",
+        "programas-aquagym.webp",
+        "programas-masaje-relajante.webp",
+        "programas-consulta-longevidad.webp",
+        "programas-parafango.webp",
+        "programas-terapia-acuatica-2.webp",
+        "programas-masaje-espalda.webp",
+        "programas-bioimpedancia.webp",
+        "programas-piscina-imserso.webp",
+        "programas-sueros-paciente.jpg",
+        "programas-suero-detox.webp",
+        "programas-bioimpedancia-diagnostico.webp",
+        "programas-plasma-rico-plaquetas.webp",
+        "programas-infiltracion-ozono.webp",
+        "programas-suero-antioxidante.webp",
+        "programas-generic.webp",
+        "programas-section-bg.png"
+      ]
+    },
+    "about_misc": {
+      "description": "About page miscellaneous images",
+      "files": [
+        "about-balneario-tradicional.jpg",
+        "about-longevity-conference.jpg"
+      ]
+    }
+  }
+}

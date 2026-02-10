@@ -1,26 +1,183 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ═══════════════════════════════════════
+   BALNEARIO DE COFRENTES - Brand System
+   Colors, fonts, and utilities from balneario.com
+   ═══════════════════════════════════════ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Brand primary - deep navy (dark sections, headings) */
+  --color-navy: #042349;
+  --color-navy-light: #0a3a6e;
+
+  /* Brand accent - lime green (highlights, tags) */
+  --color-lime: #c9ff97;
+  --color-lime-dark: #a8e070;
+  --color-lime-muted: #e8ffd6;
+
+  /* Brand CTA - coral red (buttons, links) */
+  --color-coral: #ff462e;
+  --color-coral-dark: #e63d27;
+  --color-coral-light: #fff0ed;
+
+  /* Brand gold - premium accents */
+  --color-gold: #efbf04;
+  --color-gold-light: #fef8e0;
+
+  /* Backgrounds */
+  --color-cream: #f5f4f3;
+  --color-cream-dark: #ebe9e6;
+  --color-white: #ffffff;
+
+  /* Neutrals */
+  --color-charcoal: #1e1e1e;
+  --color-warm-gray: #6b6b6b;
+  --color-light-gray: #e6e5e3;
+  --color-sand: #ccc9c4;
+
+  /* Legacy compat - map old names to brand colors */
+  --color-sage: #ff462e;
+  --color-sage-dark: #e63d27;
+  --color-sage-light: #fff0ed;
+  --color-terracotta: #ff462e;
+  --color-stone: #8a8680;
+  --color-black: #1e1e1e;
+  --color-gray-100: #f5f3ef;
+  --color-gray-200: #e6e5e3;
+  --color-gray-400: #a69882;
+  --color-gray-600: #6b6b6b;
+  --color-gray-800: #2d2d2d;
+
+  /* Typography */
+  --font-display: var(--font-forum);
+  --font-body: var(--font-raleway);
+
+  /* Spacing */
+  --spacing-section: 100px;
+  --spacing-section-sm: 64px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base ─────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Typography ──────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* ── Selection ───────────────────────── */
+
+::selection {
+  background-color: var(--color-lime-muted);
+  color: var(--color-navy);
+}
+
+/* ── Scrollbar ───────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-sand);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-stone);
+}
+
+/* ── Focus ───────────────────────────── */
+
+ :focus-visible {
+  outline: 2px solid var(--color-lime);
+  outline-offset: 2px;
+}
+
+/* ── Smooth transitions ──────────────── */
+
+img {
+  transition: opacity 0.3s ease;
+}
+
+/* ── Brand accent line ──────────────── */
+
+.brand-line {
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--color-lime);
+}
+
+/* Legacy: gold-line maps to brand-line */
+.gold-line {
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--color-lime);
+}
+
+/* ── Hide scrollbar for horizontal scroll sections */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── Prose overrides for content pages ─ */
+
+.prose h2 {
+  margin-top: 2.5em;
+}
+
+.prose h3 {
+  margin-top: 2em;
+  color: var(--color-navy);
+}
+
+.prose ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.prose ul li {
+  position: relative;
+  padding-left: 1.5em;
+}
+
+.prose ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-lime);
 }
