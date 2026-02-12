@@ -50,26 +50,35 @@ export function Footer() {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [subscribeError, setSubscribeError] = useState<string | null>(null);
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !email.includes("@")) return;
 
     setLoading(true);
+    setSubscribeError(null);
 
     try {
       const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, source: "footer_newsletter" }),
       });
 
       if (response.ok) {
         setSubscribed(true);
         setEmail("");
+      } else {
+        const payload = await response.json().catch(() => ({}));
+        setSubscribeError(
+          typeof payload?.error === "string"
+            ? payload.error
+            : "No pudimos procesar su suscripcion en este momento."
+        );
       }
-    } catch (error) {
-      console.error("Error subscribing to newsletter:", error);
+    } catch {
+      setSubscribeError("No pudimos procesar su suscripcion en este momento.");
     } finally {
       setLoading(false);
     }
@@ -113,6 +122,9 @@ export function Footer() {
                   {subscribed ? "¡Suscrito!" : loading ? "Suscribiendo..." : "Suscribirse"}
                 </button>
               </form>
+              {subscribeError && (
+                <p className="w-full text-xs font-body text-red-200 lg:max-w-sm">{subscribeError}</p>
+              )}
             </div>
           </div>
         </div>

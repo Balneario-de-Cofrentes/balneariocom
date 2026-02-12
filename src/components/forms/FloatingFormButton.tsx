@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, X } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -10,6 +10,7 @@ const HIDDEN_PATHS = ["/reserva", "/gracias-balneario"];
 
 export function FloatingFormButton() {
   const [isOpen, setIsOpen] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
 
   // Hide on specific pages
@@ -35,6 +36,11 @@ export function FloatingFormButton() {
     return () => window.removeEventListener("keydown", handler);
   }, [isOpen]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    closeButtonRef.current?.focus();
+  }, [isOpen]);
+
   const handleSuccess = useCallback(() => {
     setIsOpen(false);
     window.location.href = "/gracias-balneario";
@@ -55,6 +61,9 @@ export function FloatingFormButton() {
             onClick={() => setIsOpen(true)}
             className="fixed bottom-24 right-6 z-40 flex items-center gap-2 rounded-full bg-coral px-5 py-3.5 text-white shadow-lg shadow-coral/25 hover:bg-coral/90 transition-colors"
             aria-label="Reservar estancia"
+            aria-haspopup="dialog"
+            aria-expanded={isOpen}
+            aria-controls="floating-reserva-dialog"
           >
             <Calendar size={18} />
             <span className="text-sm font-body font-medium hidden sm:inline">Reservar</span>
@@ -83,6 +92,9 @@ export function FloatingFormButton() {
               exit={{ opacity: 0, scale: 0.8, y: 40 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
               className="fixed bottom-24 right-6 z-50 w-[calc(100vw-3rem)] max-w-sm origin-bottom-right"
+              role="dialog"
+              aria-modal="true"
+              id="floating-reserva-dialog"
             >
               <div className="rounded-2xl bg-white p-6 shadow-2xl">
                 {/* Header */}
@@ -96,6 +108,7 @@ export function FloatingFormButton() {
                     </p>
                   </div>
                   <button
+                    ref={closeButtonRef}
                     onClick={() => setIsOpen(false)}
                     className="flex h-8 w-8 items-center justify-center rounded-full bg-charcoal/5 hover:bg-charcoal/10 transition-colors"
                     aria-label="Cerrar"

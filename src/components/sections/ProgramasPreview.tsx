@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
-import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import Link from "next/link";
 
 const programas = [

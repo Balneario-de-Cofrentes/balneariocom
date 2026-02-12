@@ -189,6 +189,7 @@ export default function ProgramWizard() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [acceptedPrivacy, setAcceptedPrivacy] = useState(false);
 
   // Persist UTM params on mount
   useEffect(() => {
@@ -197,7 +198,8 @@ export default function ProgramWizard() {
 
   // Determine effective total steps (skip duration step if IMSERSO or basic)
   const shouldSkipDuration = data.hasImserso || data.goal === "basic";
-  const totalSteps = 6;
+  const totalSteps = shouldSkipDuration ? 5 : 6;
+  const progressStep = shouldSkipDuration && step > 4 ? step - 1 : step;
 
   const nextStep = useCallback(() => {
     setDirection(1);
@@ -219,12 +221,25 @@ export default function ProgramWizard() {
   }, [step, shouldSkipDuration]);
 
   const toggleCondition = useCallback((condition: string) => {
-    setData((prev) => ({
-      ...prev,
-      conditions: prev.conditions.includes(condition)
-        ? prev.conditions.filter((c) => c !== condition)
-        : [...prev.conditions, condition],
-    }));
+    setData((prev) => {
+      const noneOption = "Ninguno de los anteriores";
+      const hasCondition = prev.conditions.includes(condition);
+
+      if (condition === noneOption) {
+        return {
+          ...prev,
+          conditions: hasCondition ? [] : [noneOption],
+        };
+      }
+
+      const withoutNone = prev.conditions.filter((c) => c !== noneOption);
+      return {
+        ...prev,
+        conditions: hasCondition
+          ? withoutNone.filter((c) => c !== condition)
+          : [...withoutNone, condition],
+      };
+    });
   }, []);
 
   const isStepValid = () => {
@@ -234,7 +249,7 @@ export default function ProgramWizard() {
       case 3: return data.conditions.length > 0;
       case 4: return data.hasImserso !== null;
       case 5: return true;
-      case 6: return validateName(name) && validatePhone(phoneNumber);
+      case 6: return validateName(name) && validatePhone(phoneNumber) && acceptedPrivacy;
       default: return false;
     }
   };
@@ -251,6 +266,7 @@ export default function ProgramWizard() {
       phone: phoneNumber,
       goal: data.goal,
       hasImserso: data.hasImserso || false,
+      recommendedProgram: getRecommendation(data).program,
       conditions: data.conditions,
     });
 
@@ -305,7 +321,7 @@ export default function ProgramWizard() {
   const recommendation = step === 6 ? getRecommendation(data) : null;
 
   return (
-    <section className="relative bg-coral/5 py-20 lg:py-32">
+    <section id="program-wizard" className="relative bg-coral/5 py-20 lg:py-32">
       <div className="mx-auto max-w-4xl px-6 lg:px-10">
         {/* Header */}
         <div className="mb-12 text-center">
@@ -328,7 +344,7 @@ export default function ProgramWizard() {
           </motion.p>
 
           <div className="mt-8 mx-auto max-w-md">
-            <ProgressBar currentStep={step} totalSteps={totalSteps} />
+            <ProgressBar currentStep={progressStep} totalSteps={totalSteps} />
           </div>
         </div>
 
@@ -735,6 +751,8 @@ export default function ProgramWizard() {
                       type="text"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
+                      autoComplete="name"
+                      required
                       className="w-full rounded-xl border-2 border-charcoal/10 px-4 py-3 font-body text-charcoal focus:border-coral focus:outline-none transition-colors"
                       placeholder="Nombre y apellidos"
                     />
@@ -758,6 +776,8 @@ export default function ProgramWizard() {
                         type="tel"
                         value={phoneNumber}
                         onChange={(e) => setPhoneNumber(e.target.value)}
+                        autoComplete="tel"
+                        required
                         className="w-full rounded-xl border-2 border-charcoal/10 pl-12 pr-4 py-3 font-body text-charcoal focus:border-coral focus:outline-none transition-colors"
                         placeholder="600 000 000"
                       />
@@ -768,6 +788,23 @@ export default function ProgramWizard() {
                       </p>
                     )}
                   </div>
+
+                  <label className="flex items-start gap-3 rounded-lg border border-charcoal/10 bg-cream/70 p-3">
+                    <input
+                      type="checkbox"
+                      checked={acceptedPrivacy}
+                      onChange={(e) => setAcceptedPrivacy(e.target.checked)}
+                      className="mt-1 h-4 w-4 rounded border-gray-300 accent-coral"
+                      required
+                    />
+                    <span className="text-xs font-body text-warm-gray">
+                      Acepto la{" "}
+                      <a href="/politica-de-privacidad" className="text-coral underline">
+                        politica de privacidad
+                      </a>{" "}
+                      y autorizo el contacto para gestionar mi solicitud.
+                    </span>
+                  </label>
 
                   {/* Error state */}
                   <AnimatePresence>

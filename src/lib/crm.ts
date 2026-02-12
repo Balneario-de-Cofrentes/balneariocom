@@ -5,7 +5,6 @@ import {
   getTrackingData,
   getParamsUrl,
   getBrowserInfo,
-  getUserIP,
   pushToDataLayer,
 } from "./tracking";
 
@@ -59,10 +58,9 @@ export async function buildCRMPayload(fields: {
 }): Promise<CRMPayload> {
   const { firstName, lastName } = splitName(fields.fullName);
   const tracking = getTrackingData();
-  const ip = await getUserIP();
 
   return {
-    ip,
+    ip: "",
     source: CRM_SOURCE,
     interest: CRM_INTEREST,
     campaignId: CRM_CAMPAIGN_ID,
@@ -118,8 +116,17 @@ export async function submitToCRM(payload: CRMPayload): Promise<{ ok: boolean; e
  * Wizard goal -> CRM program mapping
  */
 export function mapWizardGoalToProgram(goal: string, hasImserso: boolean): string {
-  if (goal === "basic") return "termalismo_basic";
-  if (hasImserso) return "termalismo_longevity";
+  if (hasImserso || goal === "basic") return "termalismo_basic";
+  return "termalismo_longevity";
+}
+
+export function mapRecommendationToProgram(recommendation: string): string {
+  const normalized = recommendation.toLowerCase();
+
+  if (normalized.includes("longevidad pro")) return "longevity_club";
+  if (normalized.includes("imserso")) return "termalismo_basic";
+  if (normalized.includes("escapada termal")) return "termalismo_basic";
+
   return "termalismo_longevity";
 }
 
@@ -153,18 +160,22 @@ export async function submitWizardForm(fields: {
   phone: string;
   goal: string;
   hasImserso: boolean;
+  recommendedProgram?: string;
   conditions?: string[];
 }): Promise<{ ok: boolean; error?: string }> {
-  const program = mapWizardGoalToProgram(fields.goal, fields.hasImserso);
+  const program = fields.recommendedProgram
+    ? mapRecommendationToProgram(fields.recommendedProgram)
+    : mapWizardGoalToProgram(fields.goal, fields.hasImserso);
 
   const payload = await buildCRMPayload({
     fullName: fields.fullName,
     phone: fields.phone,
     program,
     interestedInComingMonths: "0",
-    programInterests: ["no_se_necesito_ayuda"],
-    objectives: ["otros"],
+    programInterests: [program],
+    objectives: [fields.goal || "otros"],
     objectivesOther: "Pendiente de especificar en llamada",
+    diagnoses: fields.conditions || [],
   });
 
   return submitToCRM(payload);

@@ -147,7 +147,7 @@ function ImprovedFAQ() {
         {filteredFAQs.length === 0 && (
           <div className="py-12 text-center">
             <p className="text-lg font-body text-stone">
-              No encontramos preguntas que coincidan con "{searchQuery}"
+              No encontramos preguntas que coincidan con &quot;{searchQuery}&quot;
             </p>
             <button
               onClick={() => setSearchQuery("")}

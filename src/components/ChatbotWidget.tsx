@@ -1,13 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { MessageSquare, X } from "lucide-react";
 
 const API_URL = "https://balneario-bot-production.juan-764.workers.dev";
 
 export function ChatbotWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMinimized, setIsMinimized] = useState(false);
   const [unreadCount, setUnreadCount] = useState(0);
 
   const toggleChat = () => {
@@ -58,6 +57,10 @@ export function ChatbotWidget() {
               src={`${API_URL}/chat-widget`}
               className="h-[500px] w-full border-0"
               title="Chatbot Balneario"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allow="clipboard-write; microphone"
             />
           </div>
         </div>

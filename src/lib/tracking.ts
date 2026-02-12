@@ -11,6 +11,7 @@ const UTM_KEYS = [
 ] as const;
 
 const AD_KEYS = ["gclid", "gad_source", "fbclid"] as const;
+const TRACKING_KEYS = [...UTM_KEYS, ...AD_KEYS] as const;
 
 interface TrackingData {
   utmSource: string;
@@ -42,20 +43,22 @@ export function persistUTMParams(): void {
 
   const params = new URLSearchParams(window.location.search);
 
-  for (const key of [...UTM_KEYS, ...AD_KEYS]) {
+  for (const key of TRACKING_KEYS) {
     const value = params.get(key);
     if (value) {
       localStorage.setItem(`bal_${key}`, value);
     }
   }
 
-  // Store all URL params as JSON
-  const allParams: Record<string, string> = {};
-  params.forEach((value, key) => {
-    allParams[key] = value;
-  });
-  if (Object.keys(allParams).length > 0) {
-    localStorage.setItem("bal_paramsUrl", JSON.stringify(allParams));
+  // Store only approved tracking params (privacy-by-default).
+  const trackedParams: Record<string, string> = {};
+  for (const key of TRACKING_KEYS) {
+    const value = params.get(key);
+    if (value) trackedParams[key] = value;
+  }
+
+  if (Object.keys(trackedParams).length > 0) {
+    localStorage.setItem("bal_paramsUrl", JSON.stringify(trackedParams));
   }
 }
 
@@ -125,19 +128,6 @@ export function getBrowserInfo(): BrowserInfo {
     platform: navigator.platform || "",
     userAgent: navigator.userAgent || "",
   };
-}
-
-/**
- * Fetch user IP from ipify
- */
-export async function getUserIP(): Promise<string> {
-  try {
-    const res = await fetch("https://api.ipify.org?format=json");
-    const data = await res.json();
-    return data.ip || "";
-  } catch {
-    return "";
-  }
 }
 
 /**

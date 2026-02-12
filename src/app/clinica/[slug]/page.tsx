@@ -4,10 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllTratamientos, getTratamiento } from "@/lib/content";
 import { parseContent, renderCleanedMarkdown } from "@/lib/markdown";
-import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { CTA } from "@/components/sections/CTA";
-import { ArrowLeft, Phone, MessageCircle, ArrowRight, Check } from "lucide-react";
+import { ArrowLeft, Phone, MessageCircle, ArrowRight } from "lucide-react";
 
 const treatmentImages: Record<string, string> = {
   "fisioterapia": "/images/clinica-fisioterapia.webp",

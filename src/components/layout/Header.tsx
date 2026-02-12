@@ -25,6 +25,13 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
@@ -95,6 +102,8 @@ export function Header() {
               isOpen ? "text-white" : scrolled ? "text-charcoal" : "text-white"
             }`}
             aria-label={isOpen ? "Cerrar menu" : "Abrir menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav"
           >
             {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -111,7 +120,7 @@ export function Header() {
             transition={{ duration: 0.4 }}
             className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-navy"
           >
-            <nav className="flex flex-col items-center gap-6">
+            <nav id="mobile-nav" className="flex flex-col items-center gap-6">
               {navItems.map((item, i) => (
                 <motion.div
                   key={item.href}

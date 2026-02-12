@@ -79,7 +79,7 @@ const pages = {
   ],
 };
 
-async function extractPage(page, url, section, slug) {
+async function extractPage(page, url) {
   const fullUrl = `${BASE}${url}`;
   console.log(`Fetching: ${fullUrl}`);
 
@@ -87,7 +87,7 @@ async function extractPage(page, url, section, slug) {
     await page.goto(fullUrl, { waitUntil: 'networkidle', timeout: 30000 });
     // Extra wait for Framer animations/rendering
     await page.waitForTimeout(2000);
-  } catch (e) {
+  } catch {
     console.error(`  Timeout/error loading ${fullUrl}, trying with domcontentloaded...`);
     try {
       await page.goto(fullUrl, { waitUntil: 'domcontentloaded', timeout: 20000 });
@@ -121,7 +121,7 @@ async function extractPage(page, url, section, slug) {
     }
 
     // Walk through the body and extract structured content
-    function extractFromElement(el, depth = 0) {
+    function extractFromElement(el) {
       if (!isVisible(el)) return;
 
       const tag = el.tagName?.toLowerCase();
@@ -170,7 +170,7 @@ async function extractPage(page, url, section, slug) {
 
       // Recurse into children
       for (const child of el.children) {
-        extractFromElement(child, depth + 1);
+        extractFromElement(child);
       }
     }
 
@@ -233,6 +233,8 @@ async function extractPage(page, url, section, slug) {
     const images = Array.from(document.querySelectorAll('img[alt]'))
       .map(img => img.alt)
       .filter(alt => alt && alt.length > 2);
+
+    extractFromElement(document.body);
 
     return {
       title: pageTitle,

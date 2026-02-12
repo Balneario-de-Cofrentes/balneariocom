@@ -3,10 +3,11 @@ const urlsToCache = [
   "/",
   "/images/hero-piscina-termal.jpg",
   "/images/logo.png",
-  "/offline",
+  "/images/icon-192.png",
+  "/images/icon-512.png",
 ];
 
-self.addEventListener("install", (event) => {
+self.addEventListener("install", () => {
   self.skipWaiting();
 });
 

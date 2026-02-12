@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useSpring, useMotionValue } from "fram
 import { useRef, useEffect, useState, useMemo } from "react";
 import { Button } from "@/components/ui/Button";
 import { ChevronDown } from "lucide-react";
+import type { ReactNode } from "react";
 
 const HERO_VIDEO_URL = "https://framerusercontent.com/assets/4er7AynMeROJ4lvhCGWdUeMn1P8.webm";
 const HERO_POSTER = "/images/hero-piscina-termal.jpg";
@@ -37,12 +38,26 @@ function AnimatedText({ text, className = "" }: { text: string; className?: stri
   );
 }
 
-function MagneticButton({ href, children, variant = "primary", size = "lg" }: any) {
-  const ref = useRef<HTMLButtonElement>(null);
+interface MagneticButtonProps {
+  href: string;
+  children: ReactNode;
+  variant?: "primary" | "secondary" | "outline" | "ghost";
+  size?: "sm" | "md" | "lg";
+  className?: string;
+}
+
+function MagneticButton({
+  href,
+  children,
+  variant = "primary",
+  size = "lg",
+  className = "",
+}: MagneticButtonProps) {
+  const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return;
     const rect = ref.current.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
@@ -65,7 +80,7 @@ function MagneticButton({ href, children, variant = "primary", size = "lg" }: an
   const springY = useSpring(y, SPRING_CONFIG);
 
   return (
-    <motion.button
+    <motion.div
       ref={ref}
       style={{ x: springX, y: springY }}
       onMouseMove={handleMouseMove}
@@ -73,12 +88,12 @@ function MagneticButton({ href, children, variant = "primary", size = "lg" }: an
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", ...SPRING_CONFIG }}
-      className="cursor-pointer"
+      className="inline-flex cursor-pointer"
     >
-      <Button href={href} variant={variant} size={size} className="!border-0">
+      <Button href={href} variant={variant} size={size} className={`!border-0 ${className}`}>
         {children}
       </Button>
-    </motion.button>
+    </motion.div>
   );
 }
 
@@ -126,7 +141,7 @@ function MouseBubbles() {
           });
         }
 
-        setBubbles((prev) => [...prev, ...newBubbles]);
+        setBubbles((prev) => [...prev, ...newBubbles].slice(-80));
       }
     };
 
@@ -288,7 +303,7 @@ export function Hero() {
             Reservar estancia
           </MagneticButton>
           <MagneticButton
-            href="#perfiles"
+            href="#program-wizard"
             variant="outline"
             size="lg"
             className="border-white/40 text-white hover:bg-white hover:text-navy hover:border-white"

@@ -69,6 +69,7 @@ export function SimplifiedForm({ onSuccess, defaultProgram }: SimplifiedFormProp
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          autoComplete="name"
           required
           className="w-full rounded-xl border border-gray-200 bg-cream px-4 py-3 text-sm font-body text-charcoal transition-colors focus:border-coral focus:outline-none"
           placeholder="Su nombre completo"
@@ -91,6 +92,7 @@ export function SimplifiedForm({ onSuccess, defaultProgram }: SimplifiedFormProp
             type="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
+            autoComplete="tel"
             required
             className="w-full rounded-xl border border-gray-200 bg-cream pl-10 pr-4 py-3 text-sm font-body text-charcoal transition-colors focus:border-coral focus:outline-none"
             placeholder="600 000 000"
@@ -138,6 +140,7 @@ export function SimplifiedForm({ onSuccess, defaultProgram }: SimplifiedFormProp
           type="checkbox"
           checked={accepted}
           onChange={(e) => setAccepted(e.target.checked)}
+          required
           className="mt-1 h-4 w-4 rounded border-gray-300 accent-coral"
         />
         <span className="text-xs font-body text-gray-500">

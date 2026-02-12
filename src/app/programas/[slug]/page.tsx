@@ -5,7 +5,7 @@ import { getAllProgramas, getPrograma } from "@/lib/content";
 import { parseContent, renderCleanedMarkdown } from "@/lib/markdown";
 import { Button } from "@/components/ui/Button";
 import { CTA } from "@/components/sections/CTA";
-import { ArrowLeft, Phone, MessageCircle, ArrowRight, Clock, Check } from "lucide-react";
+import { ArrowLeft, Phone, MessageCircle, Check } from "lucide-react";
 
 interface Props {
   params: Promise<{ slug: string }>;

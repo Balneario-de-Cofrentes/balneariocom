@@ -7,27 +7,27 @@ interface SchemaOrgProps {
 
 export function SchemaOrg({ type = "website", pageUrl, pageName, description }: SchemaOrgProps) {
   const baseUrl = "https://balneario.com";
+  const resolvedUrl = pageUrl || baseUrl;
+  const resolvedName = pageName || "Balneario de Cofrentes";
+  const resolvedDescription =
+    description ||
+    "Balneario de Cofrentes, la clinica de longevidad mas grande de Europa. Tratamientos termales, medicina regenerativa y programas de salud personalizados.";
 
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Balneario de Cofrentes",
-    url: baseUrl,
-    description:
-      "Balneario de Cofrentes, la clinica de longevidad mas grande de Europa. Tratamientos termales, medicina regenerativa y programas de salud personalizados.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${baseUrl}/buscar?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
+    name: resolvedName,
+    url: resolvedUrl,
+    description: resolvedDescription,
   };
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "HealthAndBeautyBusiness",
-    name: "Balneario de Cofrentes",
+    name: resolvedName,
     image: `${baseUrl}/images/og-image.jpg`,
-    url: baseUrl,
+    url: resolvedUrl,
+    description: resolvedDescription,
     telephone: "+34 96 189 40 25",
     address: {
       "@type": "PostalAddress",

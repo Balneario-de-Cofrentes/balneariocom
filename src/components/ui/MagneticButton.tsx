@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, Heart, Flame, Zap } from "lucide-react";
+import { Sparkles, Heart } from "lucide-react";
 
 interface MagneticButtonProps {
   children: React.ReactNode;

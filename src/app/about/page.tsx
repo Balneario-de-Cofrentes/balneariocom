@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import { Section } from "@/components/ui/Section";
-import { Button } from "@/components/ui/Button";
 import { CTA } from "@/components/sections/CTA";
 import { MapPin, Mail } from "lucide-react";
 
