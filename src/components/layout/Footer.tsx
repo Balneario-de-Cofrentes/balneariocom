@@ -1,19 +1,15 @@
-"use client";
-
-import Link from "next/link";
-import Image from "next/image";
 import { MapPin, Phone, Mail, Clock, ExternalLink, Sparkles } from "lucide-react";
 import { useState } from "react";
 
 const footerSections = [
   {
-    title: "Clinica de Longevidad",
+    title: "Clínica de Longevidad",
     links: [
       { label: "Balneoterapia", href: "/clinica/balneoterapia-respiratoria" },
       { label: "Fisioterapia", href: "/clinica/fisioterapia" },
       { label: "Medicina Regenerativa", href: "/clinica/medicina-regenerativa" },
       { label: "Masajes", href: "/clinica/masajes" },
-      { label: "Nutricion", href: "/clinica/nutricion" },
+      { label: "Nutrición", href: "/clinica/nutricion" },
       { label: "Ozonoterapia", href: "/clinica/ozonoterapia" },
     ],
   },
@@ -29,7 +25,7 @@ const footerSections = [
     ],
   },
   {
-    title: "Informacion",
+    title: "Información",
     links: [
       { label: "Sobre Nosotros", href: "/about" },
       { label: "Instalaciones", href: "/instalaciones" },
@@ -42,8 +38,8 @@ const footerSections = [
 ];
 
 const externalLinks = [
-  { label: "Progevita", href: "https://progevita.com", description: "Longevidad 35-65 anos" },
-  { label: "Fundacion MAFT", href: "https://maftfoundation.org", description: "Filantropia y longevidad" },
+  { label: "Progevita", href: "https://progevita.com", description: "Longevidad 35-65 años" },
+  { label: "Fundación MAFT", href: "https://maftfoundation.org", description: "Filantropía y longevidad" },
 ];
 
 export function Footer() {
@@ -74,11 +70,11 @@ export function Footer() {
         setSubscribeError(
           typeof payload?.error === "string"
             ? payload.error
-            : "No pudimos procesar su suscripcion en este momento."
+            : "No pudimos procesar su suscripción en este momento."
         );
       }
     } catch {
-      setSubscribeError("No pudimos procesar su suscripcion en este momento.");
+      setSubscribeError("No pudimos procesar su suscripción en este momento.");
     } finally {
       setLoading(false);
     }
@@ -135,18 +131,19 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-5">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block">
-              <Image
+            <a href="/" className="inline-block">
+              <img
                 src="/images/logo.png"
                 alt="Balneario de Cofrentes"
                 width={200}
                 height={44}
+                loading="lazy"
                 className="h-10 w-auto"
               />
-            </Link>
+            </a>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/60">
-              La clinica de longevidad mas grande de Europa. Tratamientos
-              termales y medicina regenerativa en el corazon de Valencia.
+              La clínica de longevidad más grande de Europa. Tratamientos
+              termales y medicina regenerativa en el corazón de Valencia.
             </p>
 
             {/* Contact info */}
@@ -190,15 +187,15 @@ export function Footer() {
               <ul className="mt-4 space-y-2.5">
                 {section.links.map((link) => (
                   <li key={link.href}>
-                    <Link
+                    <a
                       href={link.href}
                       className="text-sm text-white/60 transition-colors hover:text-white"
                     >
                       {link.label}
-                    </Link>
+                    </a>
                   </li>
                 ))}
-                {section.title === "Informacion" && (
+                {section.title === "Información" && (
                   <>
                     <li className="pt-2 border-t border-white/5">
                       <span className="text-[10px] font-semibold uppercase tracking-wider text-white/25">
@@ -232,15 +229,15 @@ export function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 text-xs text-white/40 sm:flex-row lg:px-10">
           <p>&copy; {new Date().getFullYear()} Balneario de Cofrentes. Todos los derechos reservados.</p>
           <div className="flex gap-6">
-            <Link href="/aviso-legal" className="transition-colors hover:text-white/60">
+            <a href="/aviso-legal" className="transition-colors hover:text-white/60">
               Aviso Legal
-            </Link>
-            <Link href="/politica-de-privacidad" className="transition-colors hover:text-white/60">
+            </a>
+            <a href="/politica-de-privacidad" className="transition-colors hover:text-white/60">
               Privacidad
-            </Link>
-            <Link href="/politica-de-cookies" className="transition-colors hover:text-white/60">
+            </a>
+            <a href="/politica-de-cookies" className="transition-colors hover:text-white/60">
               Cookies
-            </Link>
+            </a>
           </div>
         </div>
       </div>

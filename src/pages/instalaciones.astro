@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { parseContent, renderCleanedMarkdown } from '@/lib/markdown';
+
+const pages = await getCollection('pages');
+const page = pages.find(p => p.data.slug === 'instalaciones');
+const parsed = page ? parseContent(page.body || '') : null;
+const html = parsed ? renderCleanedMarkdown(parsed.body) : '';
+---
+
+<BaseLayout title="Instalaciones" description="Descubra las instalaciones del Balneario de Cofrentes: circuito termal, clínica de longevidad, hotel y más.">
+  <section class="bg-cream py-12 lg:py-20">
+    <div class="mx-auto max-w-4xl px-6 lg:px-10">
+      <h1 class="font-display text-4xl lg:text-5xl text-charcoal mb-8">Instalaciones</h1>
+      <div class="prose prose-lg max-w-none font-body" set:html={html} />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,9 +1,6 @@
-"use client";
-
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, X } from "lucide-react";
-import { usePathname } from "next/navigation";
 import { SimplifiedForm } from "./SimplifiedForm";
 
 const HIDDEN_PATHS = ["/reserva", "/gracias-balneario"];
@@ -11,7 +8,7 @@ const HIDDEN_PATHS = ["/reserva", "/gracias-balneario"];
 export function FloatingFormButton() {
   const [isOpen, setIsOpen] = useState(false);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
-  const pathname = usePathname();
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '/';
 
   // Hide on specific pages
   const isHidden = HIDDEN_PATHS.some((p) => pathname.startsWith(p));

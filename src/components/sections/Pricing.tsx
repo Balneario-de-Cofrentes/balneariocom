@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
@@ -9,15 +7,15 @@ const plans = [
   {
     name: "Termalismo IMSERSO",
     price: "427",
-    priceNote: "* Sujeto a subvencion IMSERSO",
+    priceNote: "* Sujeto a subvención IMSERSO",
     duration: "9 noches",
     description:
-      "Es el programa termal basico del balneario, que puede ampliar, si lo desea, con diagnosticos y tratamientos segun sus necesidades.",
+      "Es el programa termal básico del balneario, que puede ampliar, si lo desea, con diagnósticos y tratamientos según sus necesidades.",
     features: [
-      "10 dias / 9 noches en habitacion doble compartida",
-      "Pension completa",
-      "Consulta inicial con el medico",
-      "3 tecnicas termales diarias",
+      "10 días / 9 noches en habitación doble compartida",
+      "Pensión completa",
+      "Consulta inicial con el médico",
+      "3 técnicas termales diarias",
     ],
     cta: "Solicitar plaza",
     href: "/programas/imserso-balneario",
@@ -29,12 +27,12 @@ const plans = [
     priceNote: "",
     duration: "9-14 noches",
     description:
-      "Programas orientados al alivio del dolor, la inflamacion, bienestar, composicion corporal, etc. Su medico le asesorara y hara modificaciones segun necesidades.",
+      "Programas orientados al alivio del dolor, la inflamación, bienestar, composición corporal, etc. Su médico le asesorará y hará modificaciones según necesidades.",
     features: [
-      "Todos los servicios del programa basico",
-      "Diagnosticos y tratamientos adicionales segun programa",
-      "Habitacion premium",
-      "WIFI rapido en la habitacion",
+      "Todos los servicios del programa básico",
+      "Diagnósticos y tratamientos adicionales según programa",
+      "Habitación premium",
+      "WIFI rápido en la habitación",
     ],
     cta: "Ver programas",
     href: "/programas",
@@ -46,13 +44,13 @@ const plans = [
     priceNote: "",
     duration: "Personalizado",
     description:
-      "Para los que se toman su salud en serio y quieren un programa a medida con una revision integral. El otro miembro de la pareja puede elegir un programa mas basico.",
+      "Para los que se toman su salud en serio y quieren un programa a medida con una revisión integral. El otro miembro de la pareja puede elegir un programa más básico.",
     features: [
       "Todos los servicios de Club Longevidad",
-      "Diagnosticos y tratamientos de vanguardia",
-      "1 consulta integrativa por video antes de su llegada",
-      "1 consulta medica integrativa de 1 hora",
-      "Bioimpedancia y consulta de composicion corporal",
+      "Diagnósticos y tratamientos de vanguardia",
+      "1 consulta integrativa por vídeo antes de su llegada",
+      "1 consulta médica integrativa de 1 hora",
+      "Bioimpedancia y consulta de composición corporal",
     ],
     cta: "Contactar especialista",
     href: "/reserva",

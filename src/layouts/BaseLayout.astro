@@ -1,0 +1,72 @@
+---
+import '../styles/globals.css';
+
+// React Islands - imported for use with client directives
+import { Header } from '../components/layout/Header';
+import { Footer } from '../components/layout/Footer';
+import { ChatbotWidget } from '../components/ChatbotWidget';
+import { FloatingFormButton } from '../components/forms/FloatingFormButton';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title = 'Balneario de Cofrentes | La Clínica de Longevidad más grande de Europa',
+  description = 'Balneario de Cofrentes, la clínica de longevidad más grande de Europa. Tratamientos termales, medicina regenerativa, fisioterapia y programas de salud personalizados en Valencia.',
+  ogImage = '/images/og-image.jpg',
+} = Astro.props;
+
+const fullTitle = title.includes('Balneario de Cofrentes')
+  ? title
+  : `${title} | Balneario de Cofrentes`;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="balneario, cofrentes, longevidad, termalismo, medicina regenerativa, spa, valencia, tratamientos termales" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:site_name" content="Balneario de Cofrentes" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Forum&family=Raleway:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#1E293B" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Balneario" />
+
+    <link rel="icon" href="/favicon.png" />
+
+    <slot name="head" />
+  </head>
+  <body class="antialiased">
+    <Header client:load />
+    <main>
+      <slot />
+    </main>
+    <Footer client:idle />
+    <ChatbotWidget client:idle />
+    <FloatingFormButton client:load />
+  </body>
+</html>

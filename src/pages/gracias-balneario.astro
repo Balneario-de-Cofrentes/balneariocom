@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Gracias" description="Gracias por contactar con el Balneario de Cofrentes.">
+  <section class="bg-cream py-24 lg:py-36">
+    <div class="mx-auto max-w-2xl px-6 lg:px-10 text-center">
+      <div class="mb-8 inline-flex h-20 w-20 items-center justify-center rounded-full bg-lime/20">
+        <svg class="h-10 w-10 text-navy-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h1 class="font-display text-4xl lg:text-5xl text-charcoal mb-4">Gracias por su solicitud</h1>
+      <p class="text-lg font-body font-light text-warm-gray mb-8">
+        Hemos recibido sus datos correctamente. Nuestro equipo le contactará lo antes posible para confirmar su reserva.
+      </p>
+      <a href="/" class="inline-flex items-center gap-2 rounded-full bg-navy px-7 py-3 text-sm font-body font-semibold text-white transition-all duration-300 hover:bg-navy-light">
+        Volver al inicio
+      </a>
+    </div>
+  </section>
+</BaseLayout>

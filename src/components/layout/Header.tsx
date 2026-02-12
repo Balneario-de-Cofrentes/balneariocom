@@ -1,13 +1,9 @@
-"use client";
-
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
-  { label: "Clinica", href: "/clinica" },
+  { label: "Clínica", href: "/clinica" },
   { label: "Programas", href: "/programas" },
   { label: "Instalaciones", href: "/instalaciones" },
   { label: "Escapada Termal", href: "/escapada-termal" },
@@ -42,23 +38,23 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-10">
         {/* Logo */}
-        <Link href="/" className="relative z-50">
-          <Image
+        <a href="/" className="relative z-50">
+          <img
             src="/images/logo.png"
             alt="Balneario de Cofrentes"
             width={180}
             height={40}
+            fetchPriority="high"
             className={`h-8 w-auto transition-all duration-500 ${
               scrolled && !isOpen ? "brightness-0" : ""
             }`}
-            priority
           />
-        </Link>
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-8 lg:flex">
           {navItems.map((item) => (
-            <Link
+            <a
               key={item.href}
               href={item.href}
               className={`text-[13px] font-body font-medium tracking-wide transition-colors duration-300 ${
@@ -68,7 +64,7 @@ export function Header() {
               }`}
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -85,7 +81,7 @@ export function Header() {
             <span>961 894 025</span>
           </a>
 
-          <Link
+          <a
             href="/reserva"
             className={`hidden rounded-full px-6 py-2 text-[13px] font-body font-semibold transition-all duration-300 sm:block ${
               scrolled
@@ -94,7 +90,7 @@ export function Header() {
             }`}
           >
             Reservar
-          </Link>
+          </a>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -128,13 +124,13 @@ export function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.06, duration: 0.4 }}
                 >
-                  <Link
+                  <a
                     href={item.href}
                     onClick={() => setIsOpen(false)}
                     className="font-display text-3xl text-white/80 transition-colors hover:text-white"
                   >
                     {item.label}
-                  </Link>
+                  </a>
                 </motion.div>
               ))}
               <motion.div
@@ -142,13 +138,13 @@ export function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: navItems.length * 0.06 }}
               >
-                <Link
+                <a
                   href="/reserva"
                   onClick={() => setIsOpen(false)}
                   className="mt-4 inline-block rounded-full bg-lime px-8 py-3 text-base font-body font-semibold text-navy"
                 >
                   Reservar estancia
-                </Link>
+                </a>
               </motion.div>
             </nav>
           </motion.div>

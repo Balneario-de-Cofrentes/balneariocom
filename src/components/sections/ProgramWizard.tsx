@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -365,7 +363,7 @@ export default function ProgramWizard() {
               >
                 <div>
                   <label className="block font-display text-2xl text-charcoal mb-6">
-                    ¿Cuantos anos tienes?
+                    ¿Cuántos años tienes?
                   </label>
                   <div className="flex items-center gap-6 justify-center">
                     <motion.button
@@ -414,7 +412,7 @@ export default function ProgramWizard() {
                 className="space-y-6"
               >
                 <label className="block font-display text-2xl text-charcoal mb-4">
-                  ¿Cual es tu objetivo principal?
+                  ¿Cuál es tu objetivo principal?
                 </label>
                 <div className="grid gap-4 sm:grid-cols-2">
                   {goals.map((goal, i) => (
@@ -473,7 +471,7 @@ export default function ProgramWizard() {
                 className="space-y-6"
               >
                 <label className="block font-display text-2xl text-charcoal mb-2">
-                  ¿Que condiciones o sintomas tienes?
+                  ¿Qué condiciones o síntomas tienes?
                 </label>
                 <p className="text-sm font-body font-light text-warm-gray mb-6">
                   Selecciona todos los que apliquen
@@ -531,7 +529,7 @@ export default function ProgramWizard() {
                   ¿Tienes derecho al programa IMSERSO?
                 </label>
                 <p className="text-sm font-body font-light text-warm-gray mb-6">
-                  Si tienes mas de 65 anos o eres pensionista de la Seguridad Social
+                  Si tienes más de 65 años o eres pensionista de la Seguridad Social
                 </p>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <motion.button
@@ -625,7 +623,7 @@ export default function ProgramWizard() {
                 className="space-y-6"
               >
                 <label className="block font-display text-2xl text-charcoal mb-4">
-                  ¿Que duracion prefieres?
+                  ¿Qué duración prefieres?
                 </label>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <motion.button
@@ -697,7 +695,7 @@ export default function ProgramWizard() {
                       </div>
                       <div className="flex-1">
                         <h3 className="font-display text-2xl text-charcoal mb-2">
-                          Recomendacion para ti
+                          Recomendación para ti
                         </h3>
                         <p className="font-display text-xl text-coral font-semibold">
                           {recommendation.program}
@@ -745,7 +743,7 @@ export default function ProgramWizard() {
                 >
                   <div>
                     <label className="block font-display text-lg text-charcoal mb-2">
-                      ¿Como te llamas?
+                      ¿Cómo te llamas?
                     </label>
                     <input
                       type="text"
@@ -765,7 +763,7 @@ export default function ProgramWizard() {
 
                   <div>
                     <label className="block font-display text-lg text-charcoal mb-2">
-                      ¿Cual es tu telefono?
+                      ¿Cuál es tu teléfono?
                     </label>
                     <div className="relative">
                       <Phone
@@ -784,7 +782,7 @@ export default function ProgramWizard() {
                     </div>
                     {phoneNumber.length > 0 && !validatePhone(phoneNumber) && (
                       <p className="mt-1 text-xs text-coral font-body">
-                        Introduce un telefono espanol valido (9 digitos)
+                        Introduce un teléfono español válido (9 dígitos)
                       </p>
                     )}
                   </div>
@@ -800,7 +798,7 @@ export default function ProgramWizard() {
                     <span className="text-xs font-body text-warm-gray">
                       Acepto la{" "}
                       <a href="/politica-de-privacidad" className="text-coral underline">
-                        politica de privacidad
+                        política de privacidad
                       </a>{" "}
                       y autorizo el contacto para gestionar mi solicitud.
                     </span>

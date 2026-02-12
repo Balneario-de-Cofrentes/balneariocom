@@ -1,5 +1,3 @@
-"use client";
-
 // UTM tracking, browser info, and GTM dataLayer utilities
 
 const UTM_KEYS = [
