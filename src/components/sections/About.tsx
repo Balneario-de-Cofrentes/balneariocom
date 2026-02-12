@@ -25,7 +25,7 @@ export function About() {
           {/* Floating stat */}
           <div className="absolute -bottom-6 -right-6 rounded-2xl bg-white p-6 shadow-xl lg:-right-10">
             <span className="block font-display text-4xl text-navy-light">+130</span>
-            <span className="text-sm font-body text-gray-600">años de historia</span>
+            <span className="text-sm font-body text-warm-gray">años de historia</span>
           </div>
         </motion.div>
 
@@ -42,13 +42,13 @@ export function About() {
           <h2 className="text-4xl lg:text-5xl text-charcoal">
             De balneario tradicional a clínica de longevidad
           </h2>
-          <p className="mt-6 text-lg font-body font-light leading-relaxed text-gray-600">
+          <p className="mt-6 text-lg font-body font-light leading-relaxed text-warm-gray">
             Somos el balneario más medicalizado de España. Nuestras aguas
             mineromedicinales, combinadas con las técnicas más avanzadas de
             medicina regenerativa, crean un enfoque único para el cuidado de la
             salud.
           </p>
-          <p className="mt-4 text-lg font-body font-light leading-relaxed text-gray-600">
+          <p className="mt-4 text-lg font-body font-light leading-relaxed text-warm-gray">
             Nuestro equipo multidisciplinar de médicos, fisioterapeutas,
             nutricionistas y entrenadores trabaja de forma coordinada para
             diseñar un plan de tratamiento personalizado para cada persona.

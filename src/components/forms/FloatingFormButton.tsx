@@ -79,7 +79,7 @@ export function FloatingFormButton() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+              className="fixed inset-0 z-50 bg-charcoal/50 backdrop-blur-sm"
             />
 
             {/* Modal */}

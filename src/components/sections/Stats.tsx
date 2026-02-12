@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "130+", label: "Anos de historia" },
-  { value: "14", label: "Especialidades medicas" },
+  { value: "130+", label: "Años de historia" },
+  { value: "14", label: "Especialidades médicas" },
   { value: "20+", label: "Programas de salud" },
-  { value: "10.000+", label: "Pacientes al ano" },
+  { value: "10.000+", label: "Pacientes al año" },
 ];
 
 export function Stats() {
@@ -23,7 +23,7 @@ export function Stats() {
             <span className="block font-display text-4xl lg:text-5xl text-charcoal">
               {stat.value}
             </span>
-            <span className="mt-2 block text-sm font-body font-light text-gray-600">
+            <span className="mt-2 block text-sm font-body font-light text-warm-gray">
               {stat.label}
             </span>
           </motion.div>

@@ -19,7 +19,7 @@ export function Founder() {
             <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
               <img
                 src="/images/dr-miguel-angel-portrait.jpg"
-                alt="Miguel Angel Fernandez, fundador del Balneario de Cofrentes"
+                alt="Miguel Ángel Fernández, fundador del Balneario de Cofrentes"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
@@ -42,7 +42,7 @@ export function Founder() {
             </div>
 
             <h2 className="text-4xl text-white lg:text-5xl">
-              Miguel Angel Fernandez
+              Miguel Ángel Fernández
             </h2>
             <p className="mt-3 text-base font-body font-light text-white/50 italic">
               Fundador, Director médico y autor de &quot;Las 10 claves para una Longevidad Saludable&quot;

@@ -792,7 +792,7 @@ export default function ProgramWizard() {
                       type="checkbox"
                       checked={acceptedPrivacy}
                       onChange={(e) => setAcceptedPrivacy(e.target.checked)}
-                      className="mt-1 h-4 w-4 rounded border-gray-300 accent-coral"
+                      className="mt-1 h-4 w-4 rounded border-sand accent-coral"
                       required
                     />
                     <span className="text-xs font-body text-warm-gray">

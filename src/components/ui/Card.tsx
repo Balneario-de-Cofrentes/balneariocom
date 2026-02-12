@@ -43,7 +43,7 @@ export function Card({
           {title}
         </h3>
         {description && (
-          <p className="mt-2 text-sm font-body font-light leading-relaxed text-gray-600 line-clamp-2">
+          <p className="mt-2 text-sm font-body font-light leading-relaxed text-warm-gray line-clamp-2">
             {description}
           </p>
         )}

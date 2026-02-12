@@ -38,7 +38,7 @@ export function ImageDivider({ image, alt, quote, author }: ImageDividerProps) {
             transition={{ duration: 0.8 }}
             className="mx-auto max-w-3xl px-6 text-center"
           >
-            <span className="gold-line mx-auto mb-6" />
+            <span className="brand-line mx-auto mb-6" />
             <blockquote className="font-display text-2xl leading-relaxed text-white lg:text-4xl">
               {quote}
             </blockquote>

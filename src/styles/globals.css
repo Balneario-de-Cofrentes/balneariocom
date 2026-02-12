@@ -35,16 +35,10 @@
   --color-warm-gray: #6b6b6b;
   --color-light-gray: #e6e5e3;
   --color-sand: #ccc9c4;
-
-  /* Legacy compat - still referenced in components */
   --color-stone: #8a8680;
-  --color-black: #1e1e1e;
-  --color-gray-200: #e6e5e3;
-  --color-gray-400: #a69882;
-  --color-gray-600: #6b6b6b;
 
   /* Typography */
-  --font-display: 'Forum', Georgia, serif;
+  --font-display: 'Coconat', Georgia, serif;
   --font-body: 'Raleway', system-ui, sans-serif;
 
   /* Spacing */
@@ -52,36 +46,34 @@
   --spacing-section-sm: 64px;
 }
 
-/* ── Base ─────────────────────────────── */
+/* ── Base (layered so Tailwind utilities can override) ── */
 
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-body {
-  background-color: var(--color-cream);
-  color: var(--color-charcoal);
-  font-family: var(--font-body), system-ui, sans-serif;
-  overflow-x: hidden;
-}
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-charcoal);
+    font-family: var(--font-body), system-ui, sans-serif;
+    overflow-x: hidden;
+  }
 
-/* ── Typography ──────────────────────── */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), Georgia, serif;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display), Georgia, serif;
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  text-wrap: balance;
-}
-
-/* ── Selection ───────────────────────── */
-
-::selection {
-  background-color: var(--color-lime-muted);
-  color: var(--color-navy);
+  ::selection {
+    background-color: var(--color-lime-muted);
+    color: var(--color-navy);
+  }
 }
 
 /* ── Scrollbar ───────────────────────── */
@@ -119,14 +111,6 @@ img {
 /* ── Brand accent line ──────────────── */
 
 .brand-line {
-  display: block;
-  width: 48px;
-  height: 2px;
-  background: var(--color-lime);
-}
-
-/* Legacy: gold-line maps to brand-line */
-.gold-line {
   display: block;
   width: 48px;
   height: 2px;

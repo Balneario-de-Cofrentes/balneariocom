@@ -69,7 +69,7 @@ export function SimplifiedForm({ onSuccess, defaultProgram }: SimplifiedFormProp
           onChange={(e) => setName(e.target.value)}
           autoComplete="name"
           required
-          className="w-full rounded-xl border border-gray-200 bg-cream px-4 py-3 text-sm font-body text-charcoal transition-colors focus:border-coral focus:outline-none"
+          className="w-full rounded-xl border border-light-gray bg-cream px-4 py-3 text-sm font-body text-charcoal transition-colors focus:border-coral focus:outline-none"
           placeholder="Su nombre completo"
         />
         {name.length > 0 && !validateName(name) && (
@@ -92,7 +92,7 @@ export function SimplifiedForm({ onSuccess, defaultProgram }: SimplifiedFormProp
             onChange={(e) => setPhone(e.target.value)}
             autoComplete="tel"
             required
-            className="w-full rounded-xl border border-gray-200 bg-cream pl-10 pr-4 py-3 text-sm font-body text-charcoal transition-colors focus:border-coral focus:outline-none"
+            className="w-full rounded-xl border border-light-gray bg-cream pl-10 pr-4 py-3 text-sm font-body text-charcoal transition-colors focus:border-coral focus:outline-none"
             placeholder="600 000 000"
           />
         </div>
@@ -115,7 +115,7 @@ export function SimplifiedForm({ onSuccess, defaultProgram }: SimplifiedFormProp
               className={`flex items-center gap-3 rounded-lg border p-3 cursor-pointer transition-colors ${
                 program === p.value
                   ? "border-coral bg-coral/5"
-                  : "border-gray-200 hover:border-coral/30"
+                  : "border-light-gray hover:border-coral/30"
               }`}
             >
               <input
@@ -139,9 +139,9 @@ export function SimplifiedForm({ onSuccess, defaultProgram }: SimplifiedFormProp
           checked={accepted}
           onChange={(e) => setAccepted(e.target.checked)}
           required
-          className="mt-1 h-4 w-4 rounded border-gray-300 accent-coral"
+          className="mt-1 h-4 w-4 rounded border-sand accent-coral"
         />
-        <span className="text-xs font-body text-gray-500">
+        <span className="text-xs font-body text-stone">
           Quiero que me llamen y acepto la{" "}
           <a href="/politica-de-privacidad" className="text-coral underline">
             Política de privacidad
@@ -194,7 +194,7 @@ export function SimplifiedForm({ onSuccess, defaultProgram }: SimplifiedFormProp
         )}
       </motion.button>
 
-      <p className="text-xs font-body text-gray-400">
+      <p className="text-xs font-body text-stone">
         Finalidad del dato: Atender y gestionar su solicitud de contacto y/o tramitar las reservas.
       </p>
     </form>
