@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { Droplets, HeartPulse, FlaskConical, Users } from "lucide-react";
@@ -9,25 +7,25 @@ const features = [
     icon: Droplets,
     title: "Aguas mineromedicinales",
     description:
-      "Manantial propio con aguas hipotermales de composicion unica, reconocidas por sus propiedades terapeuticas desde hace siglos.",
+      "Manantial propio con aguas hipotermales de composición única, reconocidas por sus propiedades terapéuticas desde hace siglos.",
   },
   {
     icon: HeartPulse,
     title: "Medicina regenerativa",
     description:
-      "Tratamientos avanzados de ozonoterapia, plasmaferesis, infiltraciones y neuromodulacion con equipo medico especializado.",
+      "Tratamientos avanzados de ozonoterapia, plasmaféresis, infiltraciones y neuromodulación con equipo médico especializado.",
   },
   {
     icon: FlaskConical,
-    title: "Base cientifica",
+    title: "Base científica",
     description:
-      "Cada programa esta respaldado por evidencia clinica y supervisado por un equipo multidisciplinar de profesionales de la salud.",
+      "Cada programa está respaldado por evidencia clínica y supervisado por un equipo multidisciplinar de profesionales de la salud.",
   },
   {
     icon: Users,
-    title: "Atencion personalizada",
+    title: "Atención personalizada",
     description:
-      "Valoracion medica inicial, plan de tratamiento adaptado a tus necesidades y seguimiento continuo durante tu estancia.",
+      "Valoración médica inicial, plan de tratamiento adaptado a tus necesidades y seguimiento continuo durante tu estancia.",
   },
 ];
 
@@ -50,7 +48,7 @@ export function ValueProp() {
             <h3 className="font-display text-xl text-charcoal">
               {feature.title}
             </h3>
-            <p className="mt-3 text-sm font-body font-light leading-relaxed text-gray-600">
+            <p className="mt-3 text-sm font-body font-light leading-relaxed text-warm-gray">
               {feature.description}
             </p>
           </motion.div>

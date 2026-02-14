@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Section } from "@/components/ui/Section";
@@ -12,18 +10,18 @@ interface FAQItem {
 }
 
 const faqs: FAQItem[] = [
-  { category: "Reservas", q: "Que tengo que traer?", a: "Ropa comoda, banador, chanclas para el circuito termal y la documentacion necesaria. Le enviaremos una guia completa antes de su llegada." },
-  { category: "Reservas", q: "Como hago la solicitud IMSERSO?", a: "Nosotros nos encargamos de todo. Complete el formulario de reserva y le llamaremos para gestionar su plaza IMSERSO en menos de 2 minutos." },
-  { category: "IMSERSO", q: "Tengo que esperar a que IMSERSO apruebe mi solicitud?", a: "No necesariamente. Nosotros le ayudamos a tramitar su solicitud IMSERSO y le mantendremos informado del proceso." },
-  { category: "Alojamiento", q: "Hay acondicionadas?", a: "Si, las habitaciones disponen de calefaccion y aire acondicionado para su confort en cualquier epoca del ano." },
-  { category: "Alojamiento", q: "Hay Wifi?", a: "Si, todas nuestras instalaciones disponen de WIFI. Los huespedes Club Longevidad tienen acceso a WIFI rapido en su habitacion." },
-  { category: "Actividades", q: "Como me apunto a las actividades?", a: "Todas las actividades saludables estan incluidas en su estancia." },
-  { category: "Tratamientos", q: "Como reservo tratamientos adicionales?", a: "Puede reservar tratamientos adicionales durante su estancia siempre que haya disponibilidad." },
-  { category: "Clinica", q: "Como funciona el Club Longevidad?", a: "El Club Longevidad ofrece programas personalizados con diagnosticos avanzados y tratamientos especializados." },
-  { category: "Transporte", q: "Hay autobuses directos?", a: "Si, disponemos de autobuses regulares desde Valencia. Consulte con antelacion para reservar su plaza." },
+  { category: "Reservas", q: "¿Qué tengo que traer?", a: "Ropa cómoda, bañador, chanclas para el circuito termal y la documentación necesaria. Le enviaremos una guía completa antes de su llegada." },
+  { category: "Reservas", q: "¿Cómo hago la solicitud IMSERSO?", a: "Nosotros nos encargamos de todo. Complete el formulario de reserva y le llamaremos para gestionar su plaza IMSERSO en menos de 2 minutos." },
+  { category: "IMSERSO", q: "¿Tengo que esperar a que IMSERSO apruebe mi solicitud?", a: "No necesariamente. Nosotros le ayudamos a tramitar su solicitud IMSERSO y le mantendremos informado del proceso." },
+  { category: "Alojamiento", q: "¿Las habitaciones están aclimatadas?", a: "Sí, las habitaciones disponen de calefacción y aire acondicionado para su confort en cualquier época del año." },
+  { category: "Alojamiento", q: "¿Hay Wifi?", a: "Sí, todas nuestras instalaciones disponen de WIFI. Los huéspedes Club Longevidad tienen acceso a WIFI rápido en su habitación." },
+  { category: "Actividades", q: "¿Cómo me apunto a las actividades?", a: "Todas las actividades saludables están incluidas en su estancia." },
+  { category: "Tratamientos", q: "¿Cómo reservo tratamientos adicionales?", a: "Puede reservar tratamientos adicionales durante su estancia siempre que haya disponibilidad." },
+  { category: "Clínica", q: "¿Cómo funciona el Club Longevidad?", a: "El Club Longevidad ofrece programas personalizados con diagnósticos avanzados y tratamientos especializados." },
+  { category: "Transporte", q: "¿Hay autobuses directos?", a: "Sí, disponemos de autobuses regulares desde Valencia. Consulte con antelación para reservar su plaza." },
 ];
 
-const CATEGORIES = ["Todos", "Reservas", "IMSERSO", "Alojamiento", "Actividades", "Tratamientos", "Clinica", "Transporte"];
+const CATEGORIES = ["Todos", "Reservas", "IMSERSO", "Alojamiento", "Actividades", "Tratamientos", "Clínica", "Transporte"];
 
 function ImprovedFAQ() {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
@@ -61,7 +59,7 @@ function ImprovedFAQ() {
             Preguntas Frecuentes
           </h2>
           <p className="mt-4 font-body text-stone">
-            Busca entre {filteredFAQs.length} respuestas organizadas por categoria
+            Busca entre {filteredFAQs.length} respuestas organizadas por categoría
           </p>
         </div>
 
@@ -153,7 +151,7 @@ function ImprovedFAQ() {
               onClick={() => setSearchQuery("")}
               className="mt-4 rounded-full bg-navy-light px-6 py-3 font-body font-semibold text-white transition-colors hover:bg-navy-light/90"
             >
-              Limpiar busqueda
+              Limpiar búsqueda
             </button>
           </div>
         )}

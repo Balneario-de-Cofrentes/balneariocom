@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://balneario.com/sitemap-index.xml

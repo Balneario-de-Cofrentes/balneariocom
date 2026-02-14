@@ -1,9 +1,6 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { Palmtree, Heart, Sparkles, Crown, ArrowRight } from "lucide-react";
-import Link from "next/link";
 
 const profiles = [
   {
@@ -26,7 +23,7 @@ const profiles = [
     icon: Sparkles,
     title: "Club Longevidad",
     description:
-      "Si esta interesado en los Programas de Longevidad (que puede combinar con programa IMSERSO si tiene derecho) complete el formulario y le tramitaremos su reserva preferente con alojamiento premium.",
+      "Si está interesado en los Programas de Longevidad (que puede combinar con programa IMSERSO si tiene derecho) complete el formulario y le tramitaremos su reserva preferente con alojamiento premium.",
     cta: "Ver programas",
     href: "/programas",
   },
@@ -34,7 +31,7 @@ const profiles = [
     icon: Crown,
     title: "Club Longevidad PRO",
     description:
-      "Si lo que esta buscando es una propuesta personalizada con las terapias mas avanzadas, complete el formulario y nuestros especialistas le llamaran para proponerle el mejor protocolo de longevidad.",
+      "Si lo que está buscando es una propuesta personalizada con las terapias más avanzadas, complete el formulario y nuestros especialistas le llamarán para proponerle el mejor protocolo de longevidad.",
     cta: "Contactar",
     href: "/reserva",
   },
@@ -64,7 +61,7 @@ export function AudienceSelector() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
           >
-            <Link
+            <a
               href={profile.href}
               className="group flex h-full flex-col rounded-2xl bg-white p-6 shadow-sm border border-charcoal/5 transition-all duration-500 hover:border-lime/20 hover:shadow-xl hover:shadow-navy/5 hover:-translate-y-1"
             >
@@ -79,7 +76,7 @@ export function AudienceSelector() {
                 <span>{profile.cta}</span>
                 <ArrowRight size={13} />
               </div>
-            </Link>
+            </a>
           </motion.div>
         ))}
       </div>

@@ -1,44 +1,41 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight, Clock } from "lucide-react";
-import Link from "next/link";
 
 const programas = [
   {
     title: "Escapada Termal",
-    description: "Fin de semana de relax con circuito termal, alojamiento y pension completa.",
+    description: "Fin de semana de relax con circuito termal, alojamiento y pensión completa.",
     duration: "2-3 noches",
     slug: "escapada-termal",
     highlight: true,
   },
   {
     title: "Programa Saludable",
-    description: "Estancia termal con tratamientos basicos para mejorar tu bienestar general.",
-    duration: "7-14 dias",
+    description: "Estancia termal con tratamientos básicos para mejorar tu bienestar general.",
+    duration: "7-14 días",
     slug: "programa-saludable-inicial",
     highlight: false,
   },
   {
     title: "Programa Anti-inflamatorio",
-    description: "Tratamiento especializado para reducir inflamacion cronica y dolor articular.",
-    duration: "7-14 dias",
+    description: "Tratamiento especializado para reducir inflamación crónica y dolor articular.",
+    duration: "7-14 días",
     slug: "programa-anti-inflamatorio-inicial",
     highlight: false,
   },
   {
     title: "Programa Dolor",
-    description: "Plan intensivo de fisioterapia y balneoterapia para el manejo del dolor cronico.",
-    duration: "7-14 dias",
+    description: "Plan intensivo de fisioterapia y balneoterapia para el manejo del dolor crónico.",
+    duration: "7-14 días",
     slug: "programa-dolor-avanzado",
     highlight: false,
   },
   {
     title: "Programa Longevidad",
-    description: "Nuestro programa mas completo: medicina regenerativa, nutricion y entrenamiento funcional.",
+    description: "Nuestro programa más completo: medicina regenerativa, nutrición y entrenamiento funcional.",
     duration: "Personalizado",
     slug: "programa-longevidad-personalizado",
     highlight: true,
@@ -46,7 +43,7 @@ const programas = [
   {
     title: "IMSERSO",
     description: "Programa de termalismo social con todos los beneficios del balneario a precio subvencionado.",
-    duration: "10-12 dias",
+    duration: "10-12 días",
     slug: "imserso-balneario",
     highlight: false,
   },
@@ -58,7 +55,7 @@ export function ProgramasPreview() {
       <SectionHeader
         eyebrow="Programas"
         title="Un programa para cada necesidad"
-        description="Desde una escapada de fin de semana hasta programas de longevidad personalizada. Todos incluyen valoracion medica inicial."
+        description="Desde una escapada de fin de semana hasta programas de longevidad personalizada. Todos incluyen valoración médica inicial."
         dark
       />
 
@@ -71,7 +68,7 @@ export function ProgramasPreview() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
           >
-            <Link
+            <a
               href={`/programas/${programa.slug}`}
               className={`group flex h-full flex-col rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 ${
                 programa.highlight
@@ -114,7 +111,7 @@ export function ProgramasPreview() {
                   <ArrowRight size={14} />
                 </div>
               </div>
-            </Link>
+            </a>
           </motion.div>
         ))}
       </div>

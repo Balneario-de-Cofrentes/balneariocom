@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Loader2, MessageCircle } from "lucide-react";
@@ -54,7 +52,7 @@ export function SimplifiedForm({ onSuccess, defaultProgram }: SimplifiedFormProp
         window.location.href = "/gracias-balneario";
       }
     } else {
-      setError(result.error || "Error al enviar. Intentalo de nuevo.");
+      setError(result.error || "Error al enviar. Inténtalo de nuevo.");
     }
   };
 
@@ -71,7 +69,7 @@ export function SimplifiedForm({ onSuccess, defaultProgram }: SimplifiedFormProp
           onChange={(e) => setName(e.target.value)}
           autoComplete="name"
           required
-          className="w-full rounded-xl border border-gray-200 bg-cream px-4 py-3 text-sm font-body text-charcoal transition-colors focus:border-coral focus:outline-none"
+          className="w-full rounded-xl border border-light-gray bg-cream px-4 py-3 text-sm font-body text-charcoal transition-colors focus:border-coral focus:outline-none"
           placeholder="Su nombre completo"
         />
         {name.length > 0 && !validateName(name) && (
@@ -84,7 +82,7 @@ export function SimplifiedForm({ onSuccess, defaultProgram }: SimplifiedFormProp
       {/* Phone */}
       <div>
         <label className="block text-sm font-body font-medium text-charcoal mb-1.5">
-          Telefono
+          Teléfono
         </label>
         <div className="relative">
           <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-warm-gray" size={16} />
@@ -94,13 +92,13 @@ export function SimplifiedForm({ onSuccess, defaultProgram }: SimplifiedFormProp
             onChange={(e) => setPhone(e.target.value)}
             autoComplete="tel"
             required
-            className="w-full rounded-xl border border-gray-200 bg-cream pl-10 pr-4 py-3 text-sm font-body text-charcoal transition-colors focus:border-coral focus:outline-none"
+            className="w-full rounded-xl border border-light-gray bg-cream pl-10 pr-4 py-3 text-sm font-body text-charcoal transition-colors focus:border-coral focus:outline-none"
             placeholder="600 000 000"
           />
         </div>
         {phone.length > 0 && !validatePhone(phone) && (
           <p className="mt-1 text-xs text-coral font-body">
-            Telefono espanol valido (9 digitos, empieza por 6/7/8/9)
+            Teléfono español válido (9 dígitos, empieza por 6/7/8/9)
           </p>
         )}
       </div>
@@ -117,7 +115,7 @@ export function SimplifiedForm({ onSuccess, defaultProgram }: SimplifiedFormProp
               className={`flex items-center gap-3 rounded-lg border p-3 cursor-pointer transition-colors ${
                 program === p.value
                   ? "border-coral bg-coral/5"
-                  : "border-gray-200 hover:border-coral/30"
+                  : "border-light-gray hover:border-coral/30"
               }`}
             >
               <input
@@ -141,12 +139,12 @@ export function SimplifiedForm({ onSuccess, defaultProgram }: SimplifiedFormProp
           checked={accepted}
           onChange={(e) => setAccepted(e.target.checked)}
           required
-          className="mt-1 h-4 w-4 rounded border-gray-300 accent-coral"
+          className="mt-1 h-4 w-4 rounded border-sand accent-coral"
         />
-        <span className="text-xs font-body text-gray-500">
+        <span className="text-xs font-body text-stone">
           Quiero que me llamen y acepto la{" "}
           <a href="/politica-de-privacidad" className="text-coral underline">
-            Politica de privacidad
+            Política de privacidad
           </a>
         </span>
       </label>
@@ -196,7 +194,7 @@ export function SimplifiedForm({ onSuccess, defaultProgram }: SimplifiedFormProp
         )}
       </motion.button>
 
-      <p className="text-xs font-body text-gray-400">
+      <p className="text-xs font-body text-stone">
         Finalidad del dato: Atender y gestionar su solicitud de contacto y/o tramitar las reservas.
       </p>
     </form>

@@ -1,5 +1,3 @@
-"use client";
-
 import { splitName, cleanPhone } from "./validation";
 import {
   getTrackingData,

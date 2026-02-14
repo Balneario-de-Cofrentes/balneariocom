@@ -11,7 +11,7 @@ export function SchemaOrg({ type = "website", pageUrl, pageName, description }: 
   const resolvedName = pageName || "Balneario de Cofrentes";
   const resolvedDescription =
     description ||
-    "Balneario de Cofrentes, la clinica de longevidad mas grande de Europa. Tratamientos termales, medicina regenerativa y programas de salud personalizados.";
+    "Balneario de Cofrentes, la clínica de longevidad más grande de Europa. Tratamientos termales, medicina regenerativa y programas de salud personalizados.";
 
   const websiteSchema = {
     "@context": "https://schema.org",

@@ -1,5 +1,3 @@
-"use client";
-
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/Button";
@@ -41,10 +39,10 @@ export function CTA() {
             <span className="brand-line mx-auto mb-8" />
 
             <h2 className="font-display text-4xl text-white lg:text-6xl">
-              Tu bienestar empieza aqui
+              Tu bienestar empieza aquí
             </h2>
             <p className="mx-auto mt-6 max-w-lg text-base font-body font-light leading-relaxed text-white/60">
-              Reserva tu estancia y deja que nuestro equipo medico disene un plan
+              Reserva tu estancia y deja que nuestro equipo médico diseñe un plan
               de tratamiento personalizado para ti.
             </p>
 

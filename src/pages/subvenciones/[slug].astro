@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { parseContent, renderCleanedMarkdown } from '@/lib/markdown';
+import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('subvenciones');
+  return entries.map(entry => ({
+    params: { slug: entry.data.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const parsed = parseContent(entry.body || '');
+const html = renderCleanedMarkdown(parsed.body);
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+  <section class="bg-cream py-12 lg:py-20">
+    <div class="mx-auto max-w-4xl px-6 lg:px-10">
+      <div class="mb-8">
+        <Breadcrumbs
+          client:load
+          items={[
+            { label: 'Subvenciones', href: '/subvenciones' },
+            { label: entry.data.title },
+          ]}
+        />
+      </div>
+
+      <h1 class="font-display text-4xl lg:text-5xl text-charcoal mb-4">
+        {entry.data.title}
+      </h1>
+
+      <div class="prose prose-lg max-w-none font-body" set:html={html} />
+    </div>
+  </section>
+</BaseLayout>

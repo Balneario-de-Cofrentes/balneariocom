@@ -12,7 +12,7 @@ const backgrounds = {
   cream: "bg-cream",
   white: "bg-white",
   dark: "bg-navy text-white",
-  black: "bg-black text-white",
+  black: "bg-charcoal text-white",
 };
 
 export function Section({

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { type ReactNode } from "react";
 
 type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
@@ -55,9 +54,9 @@ export function Button({
       );
     }
     return (
-      <Link href={href} className={classes}>
+      <a href={href} className={classes}>
         {children}
-      </Link>
+      </a>
     );
   }
 

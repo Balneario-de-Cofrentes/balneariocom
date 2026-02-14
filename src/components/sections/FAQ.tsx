@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Section } from "@/components/ui/Section";
@@ -7,88 +5,88 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    q: "Que tengo que traer?",
-    a: "Ropa comoda, banador, chanclas para el circuito termal y la documentacion necesaria. Le enviaremos una guia completa antes de su llegada.",
+    q: "¿Qué tengo que traer?",
+    a: "Ropa cómoda, bañador, chanclas para el circuito termal y la documentación necesaria. Le enviaremos una guía completa antes de su llegada.",
   },
   {
-    q: "Como hago la solicitud IMSERSO?",
+    q: "¿Cómo hago la solicitud IMSERSO?",
     a: "Nosotros nos encargamos de todo. Complete el formulario de reserva y le llamaremos para gestionar su plaza IMSERSO en menos de 2 minutos.",
   },
   {
-    q: "Por que elegirnos?",
-    a: "Somos la clinica de longevidad mas grande de Europa, con mas de 300 profesionales, 12 medicos y protocolos de vanguardia. Nuestras aguas mineromedicinales son unicas.",
+    q: "¿Por qué elegirnos?",
+    a: "Somos la clínica de longevidad más grande de Europa, con más de 300 profesionales, 12 médicos y protocolos de vanguardia. Nuestras aguas mineromedicinales son únicas.",
   },
   {
-    q: "Como pido la beca si quiero ir 14 noches?",
-    a: "Si desea ampliar su estancia a 14 noches, contacte con nosotros y le ayudaremos a gestionar la solicitud de beca correspondiente. Las plazas son limitadas, por lo que recomendamos reservar con antelacion.",
+    q: "¿Cómo pido la beca si quiero ir 14 noches?",
+    a: "Si desea ampliar su estancia a 14 noches, contacte con nosotros y le ayudaremos a gestionar la solicitud de beca correspondiente. Las plazas son limitadas, por lo que recomendamos reservar con antelación.",
   },
   {
-    q: "Tengo que esperar a que IMSERSO apruebe mi solicitud?",
-    a: "No necesariamente. Nosotros le ayudamos a tramitar su solicitud IMSERSO y le mantenemos informado del proceso. Puede reservar su plaza con antelacion y gestionamos todo por usted.",
+    q: "¿Tengo que esperar a que IMSERSO apruebe mi solicitud?",
+    a: "No necesariamente. Nosotros le ayudamos a tramitar su solicitud IMSERSO y le mantenemos informado del proceso. Puede reservar su plaza con antelación y gestionamos todo por usted.",
   },
   {
-    q: "Hay autobuses directos?",
-    a: "Si, disponemos de autobuses regulares desde Valencia. Consulte con antelacion para reservar su plaza ya que las plazas son limitadas.",
+    q: "¿Hay autobuses directos?",
+    a: "Sí, disponemos de autobuses regulares desde Valencia. Consulte con antelación para reservar su plaza ya que las plazas son limitadas.",
   },
   {
-    q: "Hay Wifi?",
-    a: "Si, todas nuestras instalaciones disponen de WIFI. Los huespedes Club Longevidad tienen acceso a WIFI rapido en su habitacion.",
+    q: "¿Hay Wifi?",
+    a: "Sí, todas nuestras instalaciones disponen de WIFI. Los huéspedes Club Longevidad tienen acceso a WIFI rápido en su habitación.",
   },
   {
-    q: "Como me apunto a las actividades?",
-    a: "Todas las actividades saludables (mas de 8 horas diarias) estan incluidas en su estancia. Al llegar le daremos un calendario con todas las opciones disponibles: clases, paseos, ejercicio, meditacion y actividades nocturnas.",
+    q: "¿Cómo me apunto a las actividades?",
+    a: "Todas las actividades saludables (más de 8 horas diarias) están incluidas en su estancia. Al llegar le daremos un calendario con todas las opciones disponibles: clases, paseos, ejercicio, meditación y actividades nocturnas.",
   },
   {
-    q: "Como reservo tratamientos adicionales?",
-    a: "Puede reservar tratamientos adicionales durante su estancia siempre que haya disponibilidad, pero le recomendamos haberlo reservado con antelacion. Contacte con nosotros o hable con su medico durante la consulta inicial.",
+    q: "¿Cómo reservo tratamientos adicionales?",
+    a: "Puede reservar tratamientos adicionales durante su estancia siempre que haya disponibilidad, pero le recomendamos haberlo reservado con antelación. Contacte con nosotros o hable con su médico durante la consulta inicial.",
   },
   {
-    q: "Como funciona el Club Longevidad?",
-    a: "El Club Longevidad ofrece programas personalizados de salud con diagnosticos avanzados, tratamientos especializados y habitacion premium. Su medico le asesorara sobre el programa mas adecuado para sus necesidades.",
+    q: "¿Cómo funciona el Club Longevidad?",
+    a: "El Club Longevidad ofrece programas personalizados de salud con diagnósticos avanzados, tratamientos especializados y habitación premium. Su médico le asesorará sobre el programa más adecuado para sus necesidades.",
   },
   {
-    q: "Como son los programas de rehabilitacion de estancias largas?",
-    a: "Los programas de estancias largas son estancias intensivas-inmersivas de 10-30 dias con protocolos personalizados que incluyen diagnosticos, tratamientos diarios, seguimiento medico, clases de longevidad y un plan de continuacion para su vuelta a casa.",
+    q: "¿Cómo son los programas de rehabilitación de estancias largas?",
+    a: "Los programas de estancias largas son estancias intensivas-inmersivas de 10-30 días con protocolos personalizados que incluyen diagnósticos, tratamientos diarios, seguimiento médico, clases de longevidad y un plan de continuación para su vuelta a casa.",
   },
   {
-    q: "Si viajo por termalismo, necesito aportar informacion medica?",
-    a: "Si, es recomendable. En la primera consulta con el medico revisaremos su historial y condicion para personalizar su programa termal. Si tiene informes medicos recientes, traigalos para una mejor atencion.",
+    q: "Si viajo por termalismo, ¿necesito aportar información médica?",
+    a: "Sí, es recomendable. En la primera consulta con el médico revisaremos su historial y condición para personalizar su programa termal. Si tiene informes médicos recientes, tráigalos para una mejor atención.",
   },
   {
-    q: "Tengo acceso a nevera para conservar alimentos o medicacion?",
-    a: "Si, los huespedes Club Longevidad disponen de nevera en su habitacion premium. Si necesita conservar medicacion, consulte con recepcion y le facilitaremos una solucion.",
+    q: "¿Tengo acceso a nevera para conservar alimentos o medicación?",
+    a: "Sí, los huéspedes Club Longevidad disponen de nevera en su habitación premium. Si necesita conservar medicación, consulte con recepción y le facilitaremos una solución.",
   },
   {
-    q: "Puedo tener una habitacion individual?",
-    a: "Si, disponemos de habitaciones individuales con suplemento. Consulte disponibilidad al hacer su reserva.",
+    q: "¿Puedo tener una habitación individual?",
+    a: "Sí, disponemos de habitaciones individuales con suplemento. Consulte disponibilidad al hacer su reserva.",
   },
   {
-    q: "Las habitaciones estan aclimatadas?",
-    a: "Si, todas nuestras habitaciones disponen de calefaccion y aire acondicionado para su confort en cualquier epoca del ano.",
+    q: "¿Las habitaciones están aclimatadas?",
+    a: "Sí, todas nuestras habitaciones disponen de calefacción y aire acondicionado para su confort en cualquier época del año.",
   },
   {
-    q: "Puedo viajar con mis nietos?",
-    a: "Si, los ninos son bienvenidos. Disponemos de actividades al aire libre y un entorno natural ideal para disfrutar en familia. Consulte con nosotros para las opciones de alojamiento familiar.",
+    q: "¿Puedo viajar con mis nietos?",
+    a: "Sí, los niños son bienvenidos. Disponemos de actividades al aire libre y un entorno natural ideal para disfrutar en familia. Consulte con nosotros para las opciones de alojamiento familiar.",
   },
   {
-    q: "Puedo viajar con mi mascota?",
-    a: "Lamentablemente, por razones de higiene y la naturaleza clinica de nuestras instalaciones, no podemos admitir mascotas. Le ayudaremos a encontrar alternativas cercanas si lo necesita.",
+    q: "¿Puedo viajar con mi mascota?",
+    a: "Lamentablemente, por razones de higiene y la naturaleza clínica de nuestras instalaciones, no podemos admitir mascotas. Le ayudaremos a encontrar alternativas cercanas si lo necesita.",
   },
   {
-    q: "Como hago el prepago de mi estancia?",
-    a: "Le enviaremos instrucciones detalladas para el prepago una vez confirmada su reserva. Aceptamos transferencia bancaria y tarjeta. Para programas PRO, se requiere una senal de 300 euros a descontar del total.",
+    q: "¿Cómo hago el prepago de mi estancia?",
+    a: "Le enviaremos instrucciones detalladas para el prepago una vez confirmada su reserva. Aceptamos transferencia bancaria y tarjeta. Para programas PRO, se requiere una señal de 300 euros a descontar del total.",
   },
   {
-    q: "Una vez hecho el prepago, tengo que enviar justificante o llamar para avisar?",
-    a: "Si, le rogamos que envie el justificante de pago por email o WhatsApp para que podamos confirmar su reserva definitivamente y organizar su programa.",
+    q: "Una vez hecho el prepago, ¿tengo que enviar justificante o llamar para avisar?",
+    a: "Sí, le rogamos que envíe el justificante de pago por email o WhatsApp para que podamos confirmar su reserva definitivamente y organizar su programa.",
   },
   {
-    q: "Como llegar?",
-    a: "En coche desde la A3, salida por Requena hacia Cofrentes. En tren hasta Valencia, nosotros podemos recogerle con nuestros autobuses regulares (consulte con antelacion). Desde Madrid, aproximadamente 3 horas. Desde Valencia, 75 minutos en coche.",
+    q: "¿Cómo llegar?",
+    a: "En coche desde la A3, salida por Requena hacia Cofrentes. En tren hasta Valencia, nosotros podemos recogerle con nuestros autobuses regulares (consulte con antelación). Desde Madrid, aproximadamente 3 horas. Desde Valencia, 75 minutos en coche.",
   },
   {
-    q: "Esta habilitado para personas con movilidad reducida?",
-    a: "Si, nuestras instalaciones estan adaptadas para personas con movilidad reducida, incluyendo habitaciones accesibles y acceso a todas las areas de tratamiento.",
+    q: "¿Está habilitado para personas con movilidad reducida?",
+    a: "Sí, nuestras instalaciones están adaptadas para personas con movilidad reducida, incluyendo habitaciones accesibles y acceso a todas las áreas de tratamiento.",
   },
 ];
 

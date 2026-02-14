@@ -1,5 +1,3 @@
-"use client";
-
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
@@ -8,12 +6,12 @@ const stats = [
   {
     value: 185,
     suffix: "",
-    label: "anos de tradicion termal",
+    label: "años de tradición termal",
   },
   {
     value: 13000,
     suffix: "",
-    label: "pacientes cada ano",
+    label: "pacientes cada año",
   },
   {
     value: 300,
@@ -23,7 +21,7 @@ const stats = [
   {
     value: 12,
     suffix: "",
-    label: "medicos en plantilla",
+    label: "médicos en plantilla",
   },
 ];
 

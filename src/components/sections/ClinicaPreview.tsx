@@ -1,18 +1,14 @@
-"use client";
-
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 
 const featured = {
   title: "Medicina Regenerativa",
   slug: "medicina-regenerativa",
   image: "/images/clinica-plasmaferesis.webp",
   description:
-    "Terapias de vanguardia para la regeneracion celular: plasmaferesis, ozonoterapia, sueros intravenosos y protocolos personalizados de longevidad.",
+    "Terapias de vanguardia para la regeneración celular: plasmaféresis, ozonoterapia, sueros intravenosos y protocolos personalizados de longevidad.",
 };
 
 const treatments = [
@@ -37,7 +33,7 @@ const treatments = [
     image: "/images/clinica-masaje-paciente.jpg",
   },
   {
-    title: "Nutricion",
+    title: "Nutrición",
     slug: "nutricion",
     image: "/images/clinica-bioimpedancia-test.webp",
   },
@@ -62,7 +58,7 @@ export function ClinicaPreview() {
         >
           <span className="brand-line" />
           <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
-            Clinica de Longevidad
+            Clínica de Longevidad
           </span>
         </motion.div>
 
@@ -71,8 +67,8 @@ export function ClinicaPreview() {
             Tratamientos que transforman tu salud
           </h2>
           <p className="mt-5 text-base font-body font-light leading-relaxed text-warm-gray">
-            Un enfoque integral que combina medicina tradicional con las tecnicas
-            mas avanzadas de regeneracion y bienestar.
+            Un enfoque integral que combina medicina tradicional con las técnicas
+            más avanzadas de regeneración y bienestar.
           </p>
         </div>
 
@@ -85,16 +81,15 @@ export function ClinicaPreview() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-2 lg:row-span-2"
           >
-            <Link
+            <a
               href={`/clinica/${featured.slug}`}
               className="group relative block h-full min-h-[400px] overflow-hidden rounded-2xl"
             >
-              <Image
+              <img
                 src={featured.image}
                 alt={featured.title}
-                fill
-                className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 66vw"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-10">
@@ -112,7 +107,7 @@ export function ClinicaPreview() {
                   <ArrowRight size={14} />
                 </div>
               </div>
-            </Link>
+            </a>
           </motion.div>
 
           {/* Small cards */}
@@ -123,16 +118,15 @@ export function ClinicaPreview() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
             >
-              <Link
+              <a
                 href={`/clinica/${treatment.slug}`}
                 className="group relative block aspect-[16/10] overflow-hidden rounded-2xl"
               >
-                <Image
+                <img
                   src={treatment.image}
                   alt={treatment.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 1024px) 50vw, 33vw"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-navy/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">
@@ -140,7 +134,7 @@ export function ClinicaPreview() {
                     {treatment.title}
                   </h3>
                 </div>
-              </Link>
+              </a>
             </motion.div>
           ))}
         </div>

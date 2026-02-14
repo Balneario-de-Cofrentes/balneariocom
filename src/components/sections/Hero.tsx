@@ -1,5 +1,3 @@
-"use client";
-
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
 import { useRef, useEffect, useState, useMemo } from "react";
 import { Button } from "@/components/ui/Button";
@@ -90,7 +88,7 @@ function MagneticButton({
       transition={{ type: "spring", ...SPRING_CONFIG }}
       className="inline-flex cursor-pointer"
     >
-      <Button href={href} variant={variant} size={size} className={`!border-0 ${className}`}>
+      <Button href={href} variant={variant} size={size} className={className}>
         {children}
       </Button>
     </motion.div>
@@ -114,6 +112,9 @@ function MouseBubbles() {
     const hero = heroRef.current;
     if (!hero) return;
 
+    let lastSpawn = 0;
+    const SPAWN_INTERVAL = 180; // ms between bubbles
+
     const handleMouseMove = (e: MouseEvent) => {
       const rect = hero.getBoundingClientRect();
       const x = e.clientX;
@@ -124,24 +125,23 @@ function MouseBubbles() {
       setIsInHero(inHero);
 
       if (inHero) {
+        const now = Date.now();
+        if (now - lastSpawn < SPAWN_INTERVAL) return;
+        lastSpawn = now;
+
         const relativeX = x - rect.left;
         const relativeY = y - rect.top;
 
-        const newBubbles: Bubble[] = [];
-        const bubbleCount = 1 + Math.floor(Math.random() * 1);
+        const size = 18 + Math.random() * 14;
+        const newBubble: Bubble = {
+          id: now,
+          x: relativeX,
+          y: relativeY,
+          size,
+          opacity: 0.7 + Math.random() * 0.3,
+        };
 
-        for (let i = 0; i < bubbleCount; i++) {
-          const size = 15 + Math.random() * 15;
-          newBubbles.push({
-            id: Date.now() + i,
-            x: relativeX,
-            y: relativeY,
-            size,
-            opacity: 0.8 + Math.random() * 0.2,
-          });
-        }
-
-        setBubbles((prev) => [...prev, ...newBubbles].slice(-80));
+        setBubbles((prev) => [...prev, newBubble].slice(-20));
       }
     };
 
@@ -254,7 +254,7 @@ export function Hero() {
             className="h-px bg-lime/60"
           />
           <span className="font-body text-[11px] font-semibold uppercase tracking-[0.35em] text-lime">
-            La clinica de longevidad mas grande de Europa
+            La clínica de longevidad más grande de Europa
           </span>
           <motion.span
             initial={{ width: 0 }}
@@ -306,7 +306,7 @@ export function Hero() {
             href="#program-wizard"
             variant="outline"
             size="lg"
-            className="border-white/40 text-white hover:bg-white hover:text-navy hover:border-white"
+            className="!border-white/40 !text-white hover:!bg-white/15 hover:!border-white/60"
           >
             Descubrir programas
           </MagneticButton>
