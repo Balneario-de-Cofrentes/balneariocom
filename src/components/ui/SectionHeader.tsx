@@ -19,7 +19,7 @@ export function SectionHeader({
     <div className={`mb-12 max-w-2xl lg:mb-16 ${alignment}`}>
       {eyebrow && (
         <span
-          className={`mb-4 inline-block text-[11px] font-body font-semibold uppercase tracking-[0.2em] ${
+          className={`mb-4 inline-block text-xs font-body font-semibold uppercase tracking-[0.2em] ${
             dark ? "text-lime" : "text-navy-light"
           }`}
         >
@@ -35,7 +35,7 @@ export function SectionHeader({
       </h2>
       {description && (
         <p
-          className={`mt-5 text-base font-body font-light leading-relaxed ${
+          className={`mt-5 text-base font-body ${
             dark ? "text-white/60" : "text-warm-gray"
           }`}
         >

@@ -253,7 +253,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.4, ease: "circOut" }}
             className="h-px bg-lime/60"
           />
-          <span className="font-body text-[11px] font-semibold uppercase tracking-[0.35em] text-lime">
+          <span className="font-body text-xs font-semibold uppercase tracking-[0.35em] text-lime">
             La clínica de longevidad más grande de Europa
           </span>
           <motion.span
@@ -287,7 +287,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "circOut" }}
-          className="mx-auto mt-8 max-w-xl text-base font-body font-light leading-relaxed text-white/75"
+          className="mx-auto mt-8 max-w-xl text-base font-body text-white/75"
         >
           Bienvenido a un balneario moderno que ofrece protocolos de longevidad
           de vanguardia en un entorno de paz y naturaleza.

@@ -142,7 +142,7 @@ export function Footer() {
                 className="h-10 w-auto"
               />
             </a>
-            <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/70">
+            <p className="mt-6 max-w-sm text-sm text-white/70">
               La clínica de longevidad más grande de Europa. Tratamientos
               termales y medicina regenerativa en el corazón de Valencia.
             </p>
@@ -199,7 +199,7 @@ export function Footer() {
                 {section.title === "Información" && (
                   <>
                     <li className="pt-2 border-t border-white/5">
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-white/50">
+                      <span className="text-xs font-semibold uppercase tracking-wider text-white/50">
                         Proyectos
                       </span>
                     </li>

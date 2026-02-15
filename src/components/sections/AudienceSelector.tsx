@@ -43,7 +43,7 @@ export function AudienceSelector() {
       <div className="mb-12 lg:mb-16">
         <div className="mb-4 flex items-center gap-3">
           <span className="brand-line" />
-          <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
+          <span className="text-xs font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
             Tu perfil
           </span>
         </div>
@@ -69,7 +69,7 @@ export function AudienceSelector() {
                 <profile.icon size={20} strokeWidth={1.5} />
               </div>
               <h3 className="font-display text-xl text-charcoal">{profile.title}</h3>
-              <p className="mt-2 flex-1 text-[13px] font-body font-light leading-relaxed text-warm-gray">
+              <p className="mt-2 flex-1 text-[13px] font-body text-warm-gray">
                 {profile.description}
               </p>
               <div className="mt-5 flex items-center gap-1.5 text-[13px] font-body font-semibold text-navy-light transition-all duration-300 group-hover:gap-2.5">

@@ -48,7 +48,7 @@ export function ValueProp() {
             <h3 className="font-display text-xl text-charcoal">
               {feature.title}
             </h3>
-            <p className="mt-3 text-sm font-body font-light leading-relaxed text-warm-gray">
+            <p className="mt-3 text-sm font-body text-warm-gray">
               {feature.description}
             </p>
           </motion.div>

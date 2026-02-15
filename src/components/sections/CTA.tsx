@@ -41,7 +41,7 @@ export function CTA() {
             <h2 className="font-display text-4xl text-white lg:text-6xl">
               Tu bienestar empieza aquí
             </h2>
-            <p className="mx-auto mt-6 max-w-lg text-base font-body font-light leading-relaxed text-white/70">
+            <p className="mx-auto mt-6 max-w-lg text-base font-body text-white/70">
               Reserva tu estancia y deja que nuestro equipo médico diseñe un plan
               de tratamiento personalizado para ti.
             </p>

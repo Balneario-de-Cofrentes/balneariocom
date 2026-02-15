@@ -8,11 +8,11 @@ const entries = await getCollection('blog');
 <BaseLayout title="Blog" description="Articulos sobre longevidad, termalismo y bienestar en el Balneario de Cofrentes.">
   <section class="bg-cream py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-6 lg:px-10">
-      <span class="mb-4 inline-block text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
+      <span class="mb-4 inline-block text-xs font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
         Balneario de Cofrentes
       </span>
       <h1 class="font-display text-4xl lg:text-5xl text-charcoal mb-4">Blog</h1>
-      <p class="text-base font-body font-light text-warm-gray mb-12 max-w-2xl">
+      <p class="text-base font-body text-warm-gray mb-12 max-w-2xl">
         Articulos sobre longevidad, termalismo y bienestar
       </p>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
@@ -27,7 +27,7 @@ const entries = await getCollection('blog');
               {entry.data.title}
             </h2>
             {entry.data.description && (
-              <p class="mt-2 text-sm font-body font-light text-warm-gray line-clamp-2">
+              <p class="mt-2 text-sm font-body text-warm-gray line-clamp-2">
                 {entry.data.description}
               </p>
             )}

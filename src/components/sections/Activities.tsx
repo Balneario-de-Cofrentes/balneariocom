@@ -35,14 +35,14 @@ export function Activities() {
           <div className="mb-12 lg:mb-16">
             <div className="mb-4 flex items-center gap-3">
               <span className="brand-line" />
-              <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
+              <span className="text-xs font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
                 Montaña y Salud
               </span>
             </div>
             <h2 className="font-display max-w-xl text-3xl text-charcoal sm:text-4xl lg:text-5xl">
               Toda una villa termal a su alcance
             </h2>
-            <p className="mt-5 max-w-xl text-base font-body font-light leading-relaxed text-warm-gray">
+            <p className="mt-5 max-w-xl text-base font-body text-warm-gray">
               Un calendario completo con más de 8 horas diarias de actividades saludables y de montaña todos los días del año para complementar su programa de salud.
             </p>
           </div>
@@ -97,7 +97,7 @@ export function Activities() {
                 <h3 className="font-display text-lg text-charcoal">
                   {activity.title}
                 </h3>
-                <p className="mt-1 text-sm font-body font-light text-warm-gray">
+                <p className="mt-1 text-sm font-body text-warm-gray">
                   {activity.description}
                 </p>
               </div>

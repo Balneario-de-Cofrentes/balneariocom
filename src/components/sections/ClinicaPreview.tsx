@@ -57,7 +57,7 @@ export function ClinicaPreview() {
           className="mb-12 flex items-center gap-4 lg:mb-16"
         >
           <span className="brand-line" />
-          <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
+          <span className="text-xs font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
             Clínica de Longevidad
           </span>
         </motion.div>
@@ -66,7 +66,7 @@ export function ClinicaPreview() {
           <h2 className="font-display text-3xl text-charcoal sm:text-4xl lg:text-5xl">
             Tratamientos que transforman tu salud
           </h2>
-          <p className="mt-5 text-base font-body font-light leading-relaxed text-warm-gray">
+          <p className="mt-5 text-base font-body text-warm-gray">
             Un enfoque integral que combina medicina tradicional con las técnicas
             más avanzadas de regeneración y bienestar.
           </p>
@@ -93,13 +93,13 @@ export function ClinicaPreview() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-10">
-                <span className="mb-2 inline-block text-[10px] font-body font-semibold uppercase tracking-[0.2em] text-lime">
+                <span className="mb-2 inline-block text-xs font-body font-semibold uppercase tracking-[0.2em] text-lime">
                   Destacado
                 </span>
                 <h3 className="font-display text-3xl text-white lg:text-4xl">
                   {featured.title}
                 </h3>
-                <p className="mt-3 max-w-md text-sm font-body font-light text-white/70 leading-relaxed">
+                <p className="mt-3 max-w-md text-sm font-body text-white/70">
                   {featured.description}
                 </p>
                 <div className="mt-5 flex items-center gap-2 text-sm font-body font-medium text-white/80 transition-all duration-500 group-hover:gap-3 group-hover:text-white">

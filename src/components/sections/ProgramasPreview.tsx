@@ -85,7 +85,7 @@ export function ProgramasPreview() {
                   {programa.title}
                 </h3>
                 <p
-                  className={`mt-3 text-sm font-body font-light leading-relaxed ${
+                  className={`mt-3 text-sm font-body ${
                     programa.highlight ? "text-white/80" : "text-white/60"
                   }`}
                 >

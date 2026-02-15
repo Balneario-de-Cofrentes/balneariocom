@@ -106,7 +106,7 @@ function ImprovedFAQ() {
                 className="flex w-full items-start justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-sand/30"
               >
                 <div className="flex-1">
-                  <span className="mb-1.5 inline-block rounded-full bg-navy-light/10 px-2 py-0.5 text-[10px] font-semibold text-navy-light">
+                  <span className="mb-1.5 inline-block rounded-full bg-navy-light/10 px-2 py-0.5 text-xs font-semibold text-navy-light">
                     {faq.category}
                   </span>
                   <p className="font-body font-medium text-charcoal">
@@ -131,7 +131,7 @@ function ImprovedFAQ() {
                     className="overflow-hidden border-t border-sand"
                   >
                     <div className="px-6 py-5">
-                      <p className="font-body leading-relaxed text-stone">
+                      <p className="font-body text-stone">
                         {faq.a}
                       </p>
                     </div>

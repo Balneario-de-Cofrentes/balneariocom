@@ -306,7 +306,7 @@ export default function ProgramWizard() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="mt-4 text-lg font-body font-light text-warm-gray"
+            className="mt-4 text-lg font-body text-warm-gray"
           >
             Nos pondremos en contacto contigo lo antes posible.
           </motion.p>
@@ -336,7 +336,7 @@ export default function ProgramWizard() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mt-4 text-lg font-body font-light text-warm-gray"
+            className="mt-4 text-lg font-body text-warm-gray"
           >
             Responde a algunas preguntas y te recomendaremos el programa perfecto
           </motion.p>
@@ -449,7 +449,7 @@ export default function ProgramWizard() {
                       <h3 className="font-display text-lg text-charcoal text-center">
                         {goal.label}
                       </h3>
-                      <p className="mt-2 text-sm font-body font-light text-warm-gray text-center">
+                      <p className="mt-2 text-sm font-body text-warm-gray text-center">
                         {goal.desc}
                       </p>
                     </motion.button>
@@ -473,7 +473,7 @@ export default function ProgramWizard() {
                 <label className="block font-display text-2xl text-charcoal mb-2">
                   ¿Qué condiciones o síntomas tienes?
                 </label>
-                <p className="text-sm font-body font-light text-warm-gray mb-6">
+                <p className="text-sm font-body text-warm-gray mb-6">
                   Selecciona todos los que apliquen
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
@@ -528,7 +528,7 @@ export default function ProgramWizard() {
                 <label className="block font-display text-2xl text-charcoal mb-2">
                   ¿Tienes derecho al programa IMSERSO?
                 </label>
-                <p className="text-sm font-body font-light text-warm-gray mb-6">
+                <p className="text-sm font-body text-warm-gray mb-6">
                   Si tienes más de 65 años o eres pensionista de la Seguridad Social
                 </p>
                 <div className="grid gap-4 sm:grid-cols-2">
@@ -559,7 +559,7 @@ export default function ProgramWizard() {
                     <h3 className="font-display text-lg text-charcoal text-center">
                       Si, tengo derecho
                     </h3>
-                    <p className="mt-2 text-sm font-body font-light text-warm-gray text-center">
+                    <p className="mt-2 text-sm font-body text-warm-gray text-center">
                       Tengo derecho, quiero aplicarlo
                     </p>
                   </motion.button>
@@ -589,7 +589,7 @@ export default function ProgramWizard() {
                       <X size={24} />
                     </motion.div>
                     <h3 className="font-display text-lg text-charcoal text-center">No</h3>
-                    <p className="mt-2 text-sm font-body font-light text-warm-gray text-center">
+                    <p className="mt-2 text-sm font-body text-warm-gray text-center">
                       Prefiero otros programas
                     </p>
                   </motion.button>
@@ -601,7 +601,7 @@ export default function ProgramWizard() {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="text-xs font-body font-light text-warm-gray text-center bg-cream rounded-lg p-4"
+                      className="text-xs font-body text-warm-gray text-center bg-cream rounded-lg p-4"
                     >
                       Las fechas se confirmaran solo una vez que IMSERSO confirme su plaza
                     </motion.p>
@@ -641,7 +641,7 @@ export default function ProgramWizard() {
                       size={32}
                     />
                     <h3 className="font-display text-lg text-charcoal">9 dias</h3>
-                    <p className="mt-2 text-sm font-body font-light text-warm-gray text-center">
+                    <p className="mt-2 text-sm font-body text-warm-gray text-center">
                       8 noches de estancia
                     </p>
                   </motion.button>
@@ -661,7 +661,7 @@ export default function ProgramWizard() {
                       size={32}
                     />
                     <h3 className="font-display text-lg text-charcoal">14 dias</h3>
-                    <p className="mt-2 text-sm font-body font-light text-warm-gray text-center">
+                    <p className="mt-2 text-sm font-body text-warm-gray text-center">
                       13 noches de estancia
                     </p>
                   </motion.button>
@@ -700,7 +700,7 @@ export default function ProgramWizard() {
                         <p className="font-display text-xl text-coral font-semibold">
                           {recommendation.program}
                         </p>
-                        <p className="mt-2 text-sm font-body font-light text-warm-gray">
+                        <p className="mt-2 text-sm font-body text-warm-gray">
                           {recommendation.description}
                         </p>
                         <div className="flex items-center gap-2 mt-3 text-sm font-body text-charcoal">
@@ -722,7 +722,7 @@ export default function ProgramWizard() {
                               <p className="font-display text-base text-lime font-semibold mb-2">
                                 {recommendation.proSuggestion.program}
                               </p>
-                              <p className="text-sm font-body font-light text-warm-gray">
+                              <p className="text-sm font-body text-warm-gray">
                                 {recommendation.proSuggestion.description}
                               </p>
                             </motion.div>

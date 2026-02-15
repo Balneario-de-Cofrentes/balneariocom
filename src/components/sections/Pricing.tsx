@@ -64,7 +64,7 @@ export function Pricing() {
       <div className="mb-12 text-center lg:mb-16">
         <div className="mb-4 flex items-center justify-center gap-3">
           <span className="brand-line" />
-          <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
+          <span className="text-xs font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
             Longevidad accesible
           </span>
           <span className="brand-line rotate-180" />
@@ -72,7 +72,7 @@ export function Pricing() {
         <h2 className="font-display mx-auto max-w-2xl text-3xl text-charcoal sm:text-4xl lg:text-5xl">
           Programas adaptados a cada necesidad
         </h2>
-        <p className="mx-auto mt-5 max-w-xl text-base font-body font-light leading-relaxed text-warm-gray">
+        <p className="mx-auto mt-5 max-w-xl text-base font-body text-warm-gray">
           Desde termalismo IMSERSO subvencionado hasta programas de longevidad personalizados.
         </p>
       </div>
@@ -92,13 +92,13 @@ export function Pricing() {
             }`}
           >
             {plan.featured && (
-              <span className="absolute -top-3 left-6 rounded-full bg-navy-light px-4 py-1 text-[11px] font-body font-semibold text-white">
+              <span className="absolute -top-3 left-6 rounded-full bg-navy-light px-4 py-1 text-xs font-body font-semibold text-white">
                 Recomendado
               </span>
             )}
 
             <h3
-              className={`font-body text-[11px] font-semibold uppercase tracking-[0.15em] ${
+              className={`font-body text-xs font-semibold uppercase tracking-[0.15em] ${
                 plan.featured ? "text-lime" : "text-navy-light"
               }`}
             >
@@ -111,16 +111,16 @@ export function Pricing() {
               </span>
               <span className="font-display text-4xl">{plan.price}&euro;</span>
             </div>
-            <p className={`mt-0.5 text-[11px] font-body ${plan.featured ? "text-white/60" : "text-stone"}`}>
+            <p className={`mt-0.5 text-xs font-body ${plan.featured ? "text-white/60" : "text-stone"}`}>
               / {plan.duration}
             </p>
             {plan.priceNote && (
-              <p className={`mt-1.5 text-[11px] font-body italic ${plan.featured ? "text-white/60" : "text-stone"}`}>
+              <p className={`mt-1.5 text-xs font-body italic ${plan.featured ? "text-white/60" : "text-stone"}`}>
                 {plan.priceNote}
               </p>
             )}
 
-            <p className={`mt-4 text-sm font-body font-light leading-relaxed ${plan.featured ? "text-white/70" : "text-warm-gray"}`}>
+            <p className={`mt-4 text-sm font-body ${plan.featured ? "text-white/70" : "text-warm-gray"}`}>
               {plan.description}
             </p>
 

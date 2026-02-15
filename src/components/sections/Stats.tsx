@@ -23,7 +23,7 @@ export function Stats() {
             <span className="block font-display text-4xl lg:text-5xl text-charcoal">
               {stat.value}
             </span>
-            <span className="mt-2 block text-sm font-body font-light text-warm-gray">
+            <span className="mt-2 block text-sm font-body text-warm-gray">
               {stat.label}
             </span>
           </motion.div>

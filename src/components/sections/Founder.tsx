@@ -36,7 +36,7 @@ export function Founder() {
           >
             <div className="mb-4 flex items-center gap-3">
               <span className="brand-line" />
-              <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-lime">
+              <span className="text-xs font-body font-semibold uppercase tracking-[0.2em] text-lime">
                 Nuestro fundador
               </span>
             </div>
@@ -44,7 +44,7 @@ export function Founder() {
             <h2 className="font-display text-4xl text-white lg:text-5xl">
               Miguel Ángel Fernández
             </h2>
-            <p className="mt-3 text-base font-body font-light text-white/70 italic">
+            <p className="mt-3 text-base font-body text-white/70 italic">
               Fundador, Director médico y autor de &quot;Las 10 claves para una Longevidad Saludable&quot;
             </p>
 
@@ -58,7 +58,7 @@ export function Founder() {
               </blockquote>
             </div>
 
-            <p className="mt-8 text-[15px] font-body font-light leading-relaxed text-white/70">
+            <p className="mt-8 text-[15px] font-body text-white/70">
               280 habitaciones, Clínica de Longevidad, Circuito Termal, Human Lab,
               Laboratorio, y más de 300 profesionales incluyendo 12 médicos y 3 ingenieros
               especializados en Inteligencia Artificial. Una apuesta por la tecnología

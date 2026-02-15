@@ -98,7 +98,7 @@ export function FAQ() {
       <div className="mb-12 text-center lg:mb-16">
         <div className="mb-4 flex items-center justify-center gap-3">
           <span className="brand-line" />
-          <span className="text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
+          <span className="text-xs font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
             Preguntas frecuentes
           </span>
           <span className="brand-line rotate-180" />
@@ -137,7 +137,7 @@ export function FAQ() {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <p className="pb-5 pl-10 text-sm font-body font-light leading-relaxed text-warm-gray">
+                  <p className="pb-5 pl-10 text-sm font-body text-warm-gray">
                     {faq.a}
                   </p>
                 </motion.div>
