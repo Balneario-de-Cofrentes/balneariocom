@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 import type { ReactNode } from "react";
 
 const HERO_VIDEO_URL = "https://framerusercontent.com/assets/4er7AynMeROJ4lvhCGWdUeMn1P8.webm";
-const HERO_POSTER = "/images/hero-piscina-termal.jpg";
+const HERO_POSTER = "/images/hero-piscina-termal.webp";
 
 const SPRING_CONFIG = {
   damping: 25,
@@ -324,7 +324,7 @@ export function Hero() {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown size={20} className="text-white/40" />
+          <ChevronDown size={20} className="text-white/60" />
         </motion.div>
       </motion.div>
 

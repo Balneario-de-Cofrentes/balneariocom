@@ -8,21 +8,21 @@ const activities = [
     title: "Visite el Volcán",
     description:
       "Volcán del que emana el gas que enriquece nuestras aguas minero-medicinales.",
-    image: "/images/instalaciones-fuente.jpg",
+    image: "/images/instalaciones-fuente.webp",
   },
   {
     icon: Ship,
     title: "Crucero Fluvial",
     description:
       "Súbase al barco para visitar los cañones del Júcar. Una experiencia impresionante que no se espera.",
-    image: "/images/instalaciones-excursion-barco.jpg",
+    image: "/images/instalaciones-excursion-barco.webp",
   },
   {
     icon: Footprints,
     title: "Senderismo y Nordic Walking",
     description:
       "Acompáñenos en caminos de baja, media y alta dificultad por un entorno natural único.",
-    image: "/images/instalaciones-excursion.jpg",
+    image: "/images/instalaciones-excursion.webp",
   },
 ];
 
@@ -39,7 +39,7 @@ export function Activities() {
                 Montaña y Salud
               </span>
             </div>
-            <h2 className="max-w-xl text-3xl text-charcoal sm:text-4xl lg:text-5xl">
+            <h2 className="font-display max-w-xl text-3xl text-charcoal sm:text-4xl lg:text-5xl">
               Toda una villa termal a su alcance
             </h2>
             <p className="mt-5 max-w-xl text-base font-body font-light leading-relaxed text-warm-gray">

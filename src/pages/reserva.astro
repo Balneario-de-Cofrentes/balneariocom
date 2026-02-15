@@ -4,7 +4,7 @@ import { SimplifiedForm } from '@/components/forms/SimplifiedForm';
 ---
 
 <BaseLayout title="Reservar" description="Reserve su estancia en el Balneario de Cofrentes. Complete el formulario y le contactaremos.">
-  <section class="bg-cream py-12 lg:py-20">
+  <section class="bg-cream py-16 lg:py-24">
     <div class="mx-auto max-w-2xl px-6 lg:px-10">
       <div class="mb-12 text-center">
         <h1 class="font-display text-4xl lg:text-5xl text-charcoal mb-4">Reservar estancia</h1>
@@ -12,7 +12,9 @@ import { SimplifiedForm } from '@/components/forms/SimplifiedForm';
           Complete sus datos y nuestro equipo le contactará para confirmar su reserva y resolver cualquier duda.
         </p>
       </div>
-      <SimplifiedForm client:load />
+      <div data-reveal>
+        <SimplifiedForm client:load />
+      </div>
     </div>
   </section>
 </BaseLayout>

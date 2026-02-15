@@ -18,7 +18,7 @@ const html = renderCleanedMarkdown(parsed.body);
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
-  <section class="bg-cream py-12 lg:py-20">
+  <section class="bg-cream py-16 lg:py-24">
     <div class="mx-auto max-w-4xl px-6 lg:px-10">
       <div class="mb-8">
         <Breadcrumbs
@@ -34,7 +34,7 @@ const html = renderCleanedMarkdown(parsed.body);
         {entry.data.title}
       </h1>
 
-      <div class="prose prose-lg max-w-none font-body" set:html={html} />
+      <div class="prose prose-lg max-w-none font-body text-charcoal" data-reveal set:html={html} />
     </div>
   </section>
 </BaseLayout>

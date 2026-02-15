@@ -69,7 +69,7 @@ export function Pricing() {
           </span>
           <span className="brand-line rotate-180" />
         </div>
-        <h2 className="mx-auto max-w-2xl text-3xl text-charcoal sm:text-4xl lg:text-5xl">
+        <h2 className="font-display mx-auto max-w-2xl text-3xl text-charcoal sm:text-4xl lg:text-5xl">
           Programas adaptados a cada necesidad
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-base font-body font-light leading-relaxed text-warm-gray">
@@ -106,21 +106,21 @@ export function Pricing() {
             </h3>
 
             <div className="mt-4 flex items-baseline gap-1">
-              <span className={`text-xs font-body ${plan.featured ? "text-white/40" : "text-stone"}`}>
+              <span className={`text-xs font-body ${plan.featured ? "text-white/60" : "text-stone"}`}>
                 Desde
               </span>
               <span className="font-display text-4xl">{plan.price}&euro;</span>
             </div>
-            <p className={`mt-0.5 text-[11px] font-body ${plan.featured ? "text-white/40" : "text-stone"}`}>
+            <p className={`mt-0.5 text-[11px] font-body ${plan.featured ? "text-white/60" : "text-stone"}`}>
               / {plan.duration}
             </p>
             {plan.priceNote && (
-              <p className={`mt-1.5 text-[11px] font-body italic ${plan.featured ? "text-white/30" : "text-stone"}`}>
+              <p className={`mt-1.5 text-[11px] font-body italic ${plan.featured ? "text-white/60" : "text-stone"}`}>
                 {plan.priceNote}
               </p>
             )}
 
-            <p className={`mt-4 text-sm font-body font-light leading-relaxed ${plan.featured ? "text-white/60" : "text-warm-gray"}`}>
+            <p className={`mt-4 text-sm font-body font-light leading-relaxed ${plan.featured ? "text-white/70" : "text-warm-gray"}`}>
               {plan.description}
             </p>
 

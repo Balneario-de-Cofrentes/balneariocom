@@ -9,6 +9,7 @@ const programas = defineCollection({
     slug: z.string(),
     section: z.string().optional(),
     image: z.string().optional(),
+    category: z.enum(['termalismo', 'longevidad', 'dolor', 'bienestar']).optional(),
   }),
 });
 

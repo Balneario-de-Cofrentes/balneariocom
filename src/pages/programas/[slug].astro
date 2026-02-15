@@ -3,24 +3,48 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { parseContent, renderCleanedMarkdown } from '@/lib/markdown';
 import { Breadcrumbs } from '@/components/navigation/Breadcrumbs';
+import { SimplifiedForm } from '@/components/forms/SimplifiedForm';
 
 export async function getStaticPaths() {
   const entries = await getCollection('programas');
-  return entries.map(entry => ({
-    params: { slug: entry.data.slug },
-    props: { entry },
-  }));
+  return entries
+    .filter(entry => entry.data.slug !== 'imserso-balneario')
+    .map(entry => ({
+      params: { slug: entry.data.slug },
+      props: { entry },
+    }));
 }
 
 const { entry } = Astro.props;
 const parsed = parseContent(entry.body || '');
 const html = renderCleanedMarkdown(parsed.body);
+
+// Map category to a defaultProgram value for SimplifiedForm
+const programMap: Record<string, string> = {
+  termalismo: 'termalismo_basic',
+  longevidad: 'longevity_club',
+  dolor: 'longevity_club',
+  bienestar: 'termalismo_basic',
+};
+const defaultProgram = programMap[entry.data.category || ''] || 'termalismo_basic';
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
-  <section class="bg-cream py-12 lg:py-20">
-    <div class="mx-auto max-w-4xl px-6 lg:px-10">
-      <div class="mb-8">
+  <!-- Hero with image -->
+  <section class="relative overflow-hidden bg-navy">
+    {entry.data.image && (
+      <div class="absolute inset-0">
+        <img
+          src={entry.data.image}
+          alt=""
+          class="hero-ken-burns h-full w-full object-cover opacity-25"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-navy/40 via-navy/70 to-navy"></div>
+      </div>
+    )}
+    <div class="relative z-10 mx-auto max-w-4xl px-6 pt-32 pb-16 lg:px-10 lg:pt-40 lg:pb-20">
+      <div class="mb-6">
         <Breadcrumbs
           client:load
           items={[
@@ -29,36 +53,78 @@ const html = renderCleanedMarkdown(parsed.body);
           ]}
         />
       </div>
-
-      <h1 class="font-display text-4xl lg:text-5xl text-charcoal mb-4">
+      <h1 class="text-4xl text-white lg:text-5xl">
         {entry.data.title}
       </h1>
-
       {parsed.price && (
-        <p class="text-lg font-body font-semibold text-navy-light mb-6">
-          {parsed.price}
+        <div class="mt-4 flex items-baseline gap-2">
+          <span class="text-2xl font-display text-lime">{parsed.price}</span>
+        </div>
+      )}
+      {parsed.intro && (
+        <p class="mt-6 max-w-2xl text-base font-body font-light leading-relaxed text-white/70">
+          {parsed.intro}
         </p>
       )}
+      <div class="mt-8">
+        <a
+          href="#solicitar"
+          class="btn-press inline-flex items-center justify-center gap-2 rounded-full bg-lime px-7 py-3 text-[13px] font-body font-semibold text-navy transition-all duration-300 hover:bg-lime-dark"
+        >
+          Solicitar informacion
+        </a>
+      </div>
+    </div>
+  </section>
 
-      <div class="prose prose-lg max-w-none font-body" set:html={html} />
+  <!-- Content -->
+  <section class="bg-cream py-16 lg:py-24">
+    <div class="mx-auto max-w-4xl px-6 lg:px-10">
+      <div class="lg:grid lg:grid-cols-[1fr_300px] lg:gap-12">
+        <!-- Main content -->
+        <div data-reveal class="prose prose-lg max-w-none font-body" set:html={html} />
 
-      {parsed.relatedTreatments.length > 0 && (
-        <aside class="mt-16 rounded-2xl bg-white p-8 shadow-sm">
-          <h2 class="font-display text-2xl text-charcoal mb-6">
-            Tratamientos incluidos
-          </h2>
-          <ul class="grid gap-3 sm:grid-cols-2">
-            {parsed.relatedTreatments.map(item => (
-              <li class="flex items-baseline justify-between gap-2 font-body text-sm text-warm-gray">
-                <span>{item.name}</span>
-                {item.price && (
-                  <span class="shrink-0 font-semibold text-navy-light">{item.price}</span>
-                )}
-              </li>
-            ))}
-          </ul>
-        </aside>
-      )}
+        <!-- Sidebar -->
+        {parsed.relatedTreatments.length > 0 && (
+          <aside data-reveal class="mt-12 lg:mt-0">
+            <div class="rounded-2xl bg-white p-6 shadow-sm lg:sticky lg:top-24">
+              <h2 class="text-xl text-charcoal mb-4">
+                Tratamientos incluidos
+              </h2>
+              <ul class="space-y-3">
+                {parsed.relatedTreatments.map(item => (
+                  <li class="flex items-baseline justify-between gap-2 border-b border-light-gray pb-3 last:border-0 last:pb-0">
+                    <span class="text-sm font-body text-warm-gray">{item.name}</span>
+                    {item.price && (
+                      <span class="shrink-0 text-sm font-body font-semibold text-navy-light">{item.price}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Form -->
+  <section id="solicitar" data-reveal class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-xl px-6 lg:px-10">
+      <div class="text-center mb-8">
+        <span class="mb-4 inline-block text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
+          Reservar
+        </span>
+        <h2 class="text-3xl text-charcoal">
+          Solicite informacion
+        </h2>
+        <p class="mt-3 text-base font-body font-light text-warm-gray">
+          Dejenos sus datos y le llamaremos para resolver sus dudas y gestionar su reserva.
+        </p>
+      </div>
+      <div class="rounded-2xl bg-cream p-6 sm:p-8">
+        <SimplifiedForm client:visible defaultProgram={defaultProgram} />
+      </div>
     </div>
   </section>
 </BaseLayout>

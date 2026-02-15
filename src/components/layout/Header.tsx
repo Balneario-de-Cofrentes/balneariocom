@@ -40,7 +40,7 @@ export function Header() {
         {/* Logo */}
         <a href="/" className="relative z-50">
           <img
-            src="/images/logo.png"
+            src="/images/logo.webp"
             alt="Balneario de Cofrentes"
             width={180}
             height={40}
@@ -73,7 +73,7 @@ export function Header() {
           <a
             href="tel:+34961894025"
             className={`hidden items-center gap-2 text-xs font-body font-medium transition-colors duration-300 lg:flex ${
-              scrolled ? "text-charcoal/50 hover:text-navy-light" : "text-white/50 hover:text-white"
+              scrolled ? "text-charcoal/60 hover:text-navy-light" : "text-white/70 hover:text-white"
             }`}
             aria-label="Llamar al balneario"
           >
@@ -94,7 +94,7 @@ export function Header() {
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`relative z-50 p-2 transition-colors lg:hidden ${
+            className={`relative z-50 flex h-11 w-11 items-center justify-center transition-colors lg:hidden ${
               isOpen ? "text-white" : scrolled ? "text-charcoal" : "text-white"
             }`}
             aria-label={isOpen ? "Cerrar menu" : "Abrir menu"}
@@ -141,7 +141,7 @@ export function Header() {
                 <a
                   href="/reserva"
                   onClick={() => setIsOpen(false)}
-                  className="mt-4 inline-block rounded-full bg-lime px-8 py-3 text-base font-body font-semibold text-navy"
+                  className="mt-4 inline-block rounded-full bg-lime px-8 py-3 text-base font-body font-semibold text-navy transition-all duration-300 hover:bg-lime-dark hover:scale-105"
                 >
                   Reservar estancia
                 </a>

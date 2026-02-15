@@ -6,12 +6,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="Términos de Servicio, Privacidad y Cookies"
   description="Aviso legal, política de privacidad y política de cookies de Hervideros de Cofrentes, S.L."
 >
-  <section class="bg-cream py-12 lg:py-20">
+  <section class="bg-cream py-16 lg:py-24">
     <div class="mx-auto max-w-4xl px-6 lg:px-10">
-      <article class="prose prose-lg max-w-none font-body">
-        <h1>Términos de Servicio, Privacidad y Cookies</h1>
+      <article class="prose prose-lg max-w-none font-body text-charcoal">
+        <h1 class="font-display text-4xl lg:text-5xl text-charcoal">Términos de Servicio, Privacidad y Cookies</h1>
 
-        <h2>Aviso Legal</h2>
+        <h2 id="aviso-legal">Aviso Legal</h2>
         <h3>Datos identificativos del titular del sitio web</h3>
         <p>
           En cumplimiento del deber de información estipulado en el artículo 10 de la
@@ -62,7 +62,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
         <p>El presente Aviso Legal se rige por la normativa española vigente.</p>
 
-        <h2>Política de Cookies</h2>
+        <h2 id="politica-de-cookies">Política de Cookies</h2>
         <h3>Este sitio utiliza cookies</h3>
         <p>
           En cumplimiento de la Ley 34/2002 de 11 de julio de Servicios de la Sociedad
@@ -87,27 +87,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <h3>Cómo desactivar cookies en navegadores principales</h3>
         <ul>
-          <li>Safari: https://support.apple.com/es-es/HT201265</li>
-          <li>
-            Firefox:
-            https://support.mozilla.org/es/kb/Protecci%C3%B3n-contra-el-rastreo-mejorada-en-Firefox-para-escritorio
-          </li>
-          <li>
-            Chrome:
-            https://support.google.com/chrome/answer/95647?hl=es-es
-          </li>
-          <li>Opera: https://www.opera.com/help/tutorials/security/privacy/</li>
-          <li>
-            Internet Explorer:
-            https://support.microsoft.com/es-es/help/17442/windows-internet-explorer-delete-manage-cookies
-          </li>
-          <li>
-            Edge:
-            https://privacy.microsoft.com/es-es/windows-10-microsoft-edge-and-privacy
-          </li>
+          <li>Safari: <a href="https://support.apple.com/es-es/HT201265" target="_blank" rel="noopener noreferrer">Gestionar cookies en Safari</a></li>
+          <li>Firefox: <a href="https://support.mozilla.org/es/kb/Protecci%C3%B3n-contra-el-rastreo-mejorada-en-Firefox-para-escritorio" target="_blank" rel="noopener noreferrer">Protección contra el rastreo en Firefox</a></li>
+          <li>Chrome: <a href="https://support.google.com/chrome/answer/95647?hl=es-es" target="_blank" rel="noopener noreferrer">Gestionar cookies en Chrome</a></li>
+          <li>Opera: <a href="https://www.opera.com/help/tutorials/security/privacy/" target="_blank" rel="noopener noreferrer">Privacidad en Opera</a></li>
+          <li>Internet Explorer: <a href="https://support.microsoft.com/es-es/help/17442/windows-internet-explorer-delete-manage-cookies" target="_blank" rel="noopener noreferrer">Gestionar cookies en IE</a></li>
+          <li>Edge: <a href="https://privacy.microsoft.com/es-es/windows-10-microsoft-edge-and-privacy" target="_blank" rel="noopener noreferrer">Privacidad en Edge</a></li>
         </ul>
 
-        <h2>Política de Privacidad y Protección de Datos</h2>
+        <h2 id="politica-de-privacidad">Política de Privacidad y Protección de Datos</h2>
         <p>
           En Hervideros de Cofrentes S.L., su privacidad es de suma importancia para
           nosotros. Nos comprometemos a proteger sus datos personales de acuerdo con el

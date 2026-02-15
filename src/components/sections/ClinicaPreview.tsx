@@ -30,7 +30,7 @@ const treatments = [
   {
     title: "Masajes",
     slug: "masajes",
-    image: "/images/clinica-masaje-paciente.jpg",
+    image: "/images/clinica-masaje-paciente.webp",
   },
   {
     title: "Nutrición",
@@ -63,7 +63,7 @@ export function ClinicaPreview() {
         </motion.div>
 
         <div className="mb-12 max-w-3xl lg:mb-16">
-          <h2 className="text-3xl text-charcoal sm:text-4xl lg:text-5xl">
+          <h2 className="font-display text-3xl text-charcoal sm:text-4xl lg:text-5xl">
             Tratamientos que transforman tu salud
           </h2>
           <p className="mt-5 text-base font-body font-light leading-relaxed text-warm-gray">
@@ -99,7 +99,7 @@ export function ClinicaPreview() {
                 <h3 className="font-display text-3xl text-white lg:text-4xl">
                   {featured.title}
                 </h3>
-                <p className="mt-3 max-w-md text-sm font-body font-light text-white/60 leading-relaxed">
+                <p className="mt-3 max-w-md text-sm font-body font-light text-white/70 leading-relaxed">
                   {featured.description}
                 </p>
                 <div className="mt-5 flex items-center gap-2 text-sm font-body font-medium text-white/80 transition-all duration-500 group-hover:gap-3 group-hover:text-white">

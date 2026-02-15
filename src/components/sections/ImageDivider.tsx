@@ -43,7 +43,7 @@ export function ImageDivider({ image, alt, quote, author }: ImageDividerProps) {
               {quote}
             </blockquote>
             {author && (
-              <p className="mt-4 text-sm font-body text-white/60">{author}</p>
+              <p className="mt-4 text-sm font-body text-white/70">{author}</p>
             )}
           </motion.div>
         </div>

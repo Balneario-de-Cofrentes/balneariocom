@@ -10,10 +10,13 @@ const html = parsed ? renderCleanedMarkdown(parsed.body) : '';
 ---
 
 <BaseLayout title="HumanLab" description="HumanLab at Cofrentes: laboratorio de investigacion en longevidad y salud.">
-  <section class="bg-cream py-12 lg:py-20">
+  <section class="bg-cream py-16 lg:py-24">
     <div class="mx-auto max-w-4xl px-6 lg:px-10">
+      <span class="mb-4 inline-block text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
+        Investigacion y Ciencia
+      </span>
       <h1 class="font-display text-4xl lg:text-5xl text-charcoal mb-8">HumanLab</h1>
-      <div class="prose prose-lg max-w-none font-body" set:html={html} />
+      <div class="prose prose-lg max-w-none font-body" data-reveal set:html={html} />
     </div>
   </section>
 </BaseLayout>

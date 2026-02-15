@@ -6,17 +6,22 @@ const entries = await getCollection('tratamientos');
 ---
 
 <BaseLayout title="Tratamientos" description="Tratamientos termales y de longevidad en el Balneario de Cofrentes.">
-  <section class="bg-cream py-20 lg:py-28">
+  <section class="bg-cream py-16 lg:py-24">
     <div class="mx-auto max-w-7xl px-6 lg:px-10">
+      <span class="mb-4 inline-block text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
+        Clinica de Longevidad
+      </span>
       <h1 class="font-display text-4xl lg:text-5xl text-charcoal mb-4">Tratamientos</h1>
       <p class="text-base font-body font-light text-warm-gray mb-12 max-w-2xl">
         Tratamientos termales y de longevidad
       </p>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {entries.map(entry => (
+      <div data-reveal-stagger class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {entries.map((entry, i) => (
           <a
+            data-reveal
+            style={`--reveal-i: ${i}`}
             href={`/clinica/${entry.data.slug}`}
-            class="group block rounded-2xl bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            class="btn-press group block rounded-2xl bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2"
           >
             <h2 class="font-display text-xl text-charcoal group-hover:text-navy-light transition-colors">
               {entry.data.title}

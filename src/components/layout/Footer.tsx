@@ -107,6 +107,7 @@ export function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="tu@email.com"
+                  aria-label="Correo electrónico para newsletter"
                   className="flex-1 rounded-full border-2 border-white/30 bg-white px-6 py-3 text-charcoal placeholder:text-stone/50 outline-none transition-all focus:border-lime focus:ring-2 focus:ring-lime/20"
                   required
                 />
@@ -133,7 +134,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <a href="/" className="inline-block">
               <img
-                src="/images/logo.png"
+                src="/images/logo.webp"
                 alt="Balneario de Cofrentes"
                 width={200}
                 height={44}
@@ -141,7 +142,7 @@ export function Footer() {
                 className="h-10 w-auto"
               />
             </a>
-            <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/60">
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/70">
               La clínica de longevidad más grande de Europa. Tratamientos
               termales y medicina regenerativa en el corazón de Valencia.
             </p>
@@ -152,26 +153,26 @@ export function Footer() {
                 href="https://maps.google.com/?q=Balneario+de+Cofrentes"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 text-sm text-white/60 transition-colors hover:text-white"
+                className="flex items-start gap-3 text-sm text-white/70 transition-colors hover:text-white"
               >
                 <MapPin size={16} className="mt-0.5 shrink-0" />
                 <span>Carretera del Balneario, s/n, 46625 Cofrentes, Valencia</span>
               </a>
               <a
                 href="tel:+34961894025"
-                className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white"
+                className="flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-white"
               >
                 <Phone size={16} className="shrink-0" />
                 <span>961 894 025</span>
               </a>
               <a
                 href="mailto:info@balneario.com"
-                className="flex items-center gap-3 text-sm text-white/60 transition-colors hover:text-white"
+                className="flex items-center gap-3 text-sm text-white/70 transition-colors hover:text-white"
               >
                 <Mail size={16} className="shrink-0" />
                 <span>info@balneario.com</span>
               </a>
-              <div className="flex items-center gap-3 text-sm text-white/60">
+              <div className="flex items-center gap-3 text-sm text-white/70">
                 <Clock size={16} className="shrink-0" />
                 <span>Lunes a Domingo, 8:00 - 20:00</span>
               </div>
@@ -181,7 +182,7 @@ export function Footer() {
           {/* Link Columns */}
           {footerSections.map((section) => (
             <div key={section.title}>
-              <h3 className="text-sm font-body font-semibold uppercase tracking-wider text-white/40">
+              <h3 className="text-sm font-body font-semibold uppercase tracking-wider text-white/70">
                 {section.title}
               </h3>
               <ul className="mt-4 space-y-2.5">
@@ -189,7 +190,7 @@ export function Footer() {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className="text-sm text-white/60 transition-colors hover:text-white"
+                      className="text-sm text-white/70 transition-colors hover:text-white"
                     >
                       {link.label}
                     </a>
@@ -198,7 +199,7 @@ export function Footer() {
                 {section.title === "Información" && (
                   <>
                     <li className="pt-2 border-t border-white/5">
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-white/25">
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-white/50">
                         Proyectos
                       </span>
                     </li>
@@ -208,7 +209,7 @@ export function Footer() {
                           href={ext.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="group flex items-center gap-1.5 text-sm text-white/60 transition-colors hover:text-white"
+                          className="group flex items-center gap-1.5 text-sm text-white/70 transition-colors hover:text-white"
                         >
                           {ext.label}
                           <ExternalLink size={10} className="opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -223,19 +224,18 @@ export function Footer() {
         </div>
       </div>
 
-
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 text-xs text-white/40 sm:flex-row lg:px-10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 text-xs text-white/60 sm:flex-row lg:px-10">
           <p>&copy; {new Date().getFullYear()} Balneario de Cofrentes. Todos los derechos reservados.</p>
           <div className="flex gap-6">
-            <a href="/aviso-legal" className="transition-colors hover:text-white/60">
+            <a href="/politica-de-privacidad-cookies" className="transition-colors hover:text-white">
               Aviso Legal
             </a>
-            <a href="/politica-de-privacidad" className="transition-colors hover:text-white/60">
+            <a href="/politica-de-privacidad-cookies#politica-de-privacidad" className="transition-colors hover:text-white">
               Privacidad
             </a>
-            <a href="/politica-de-cookies" className="transition-colors hover:text-white/60">
+            <a href="/politica-de-privacidad-cookies#politica-de-cookies" className="transition-colors hover:text-white">
               Cookies
             </a>
           </div>

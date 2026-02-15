@@ -18,7 +18,7 @@ export function Founder() {
           >
             <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
               <img
-                src="/images/dr-miguel-angel-portrait.jpg"
+                src="/images/dr-miguel-angel-portrait.webp"
                 alt="Miguel Ángel Fernández, fundador del Balneario de Cofrentes"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
@@ -41,10 +41,10 @@ export function Founder() {
               </span>
             </div>
 
-            <h2 className="text-4xl text-white lg:text-5xl">
+            <h2 className="font-display text-4xl text-white lg:text-5xl">
               Miguel Ángel Fernández
             </h2>
-            <p className="mt-3 text-base font-body font-light text-white/50 italic">
+            <p className="mt-3 text-base font-body font-light text-white/70 italic">
               Fundador, Director médico y autor de &quot;Las 10 claves para una Longevidad Saludable&quot;
             </p>
 
@@ -58,7 +58,7 @@ export function Founder() {
               </blockquote>
             </div>
 
-            <p className="mt-8 text-[15px] font-body font-light leading-relaxed text-white/50">
+            <p className="mt-8 text-[15px] font-body font-light leading-relaxed text-white/70">
               280 habitaciones, Clínica de Longevidad, Circuito Termal, Human Lab,
               Laboratorio, y más de 300 profesionales incluyendo 12 médicos y 3 ingenieros
               especializados en Inteligencia Artificial. Una apuesta por la tecnología
@@ -76,7 +76,7 @@ export function Founder() {
                   <span className="block font-display text-3xl text-lime lg:text-4xl">
                     {stat.number}
                   </span>
-                  <span className="mt-1 block text-xs font-body text-white/40">
+                  <span className="mt-1 block text-xs font-body text-white/60">
                     {stat.label}
                   </span>
                 </div>

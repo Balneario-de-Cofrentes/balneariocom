@@ -41,7 +41,7 @@ export function CTA() {
             <h2 className="font-display text-4xl text-white lg:text-6xl">
               Tu bienestar empieza aquí
             </h2>
-            <p className="mx-auto mt-6 max-w-lg text-base font-body font-light leading-relaxed text-white/60">
+            <p className="mx-auto mt-6 max-w-lg text-base font-body font-light leading-relaxed text-white/70">
               Reserva tu estancia y deja que nuestro equipo médico diseñe un plan
               de tratamiento personalizado para ti.
             </p>
@@ -55,7 +55,8 @@ export function CTA() {
               </Button>
               <a
                 href="tel:+34961894025"
-                className="flex items-center gap-2 text-sm font-body text-white/50 transition-colors hover:text-white"
+                aria-label="Llamar al 961 894 025"
+                className="flex min-h-[44px] items-center gap-2 text-sm font-body text-white/70 transition-colors hover:text-white"
               >
                 <Phone size={14} />
                 <span>961 894 025</span>
@@ -67,10 +68,10 @@ export function CTA() {
               href="https://wa.me/34662359976"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-body text-white/30 transition-colors hover:text-white/60"
+              className="mt-6 inline-flex min-h-[44px] items-center gap-2 text-sm font-body text-white/60 transition-colors hover:text-white"
             >
               <MessageCircle size={14} />
-              <span>O escribenos por WhatsApp</span>
+              <span>O escríbenos por WhatsApp</span>
             </a>
           </motion.div>
         </div>

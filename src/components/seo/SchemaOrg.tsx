@@ -25,7 +25,7 @@ export function SchemaOrg({ type = "website", pageUrl, pageName, description }: 
     "@context": "https://schema.org",
     "@type": "HealthAndBeautyBusiness",
     name: resolvedName,
-    image: `${baseUrl}/images/og-image.jpg`,
+    image: `${baseUrl}/images/og-image.webp`,
     url: resolvedUrl,
     description: resolvedDescription,
     telephone: "+34 96 189 40 25",

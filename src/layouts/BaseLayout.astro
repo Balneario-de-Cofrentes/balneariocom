@@ -16,7 +16,7 @@ interface Props {
 const {
   title = 'Balneario de Cofrentes | La Clínica de Longevidad más grande de Europa',
   description = 'Balneario de Cofrentes, la clínica de longevidad más grande de Europa. Tratamientos termales, medicina regenerativa, fisioterapia y programas de salud personalizados en Valencia.',
-  ogImage = '/images/og-image.jpg',
+  ogImage = '/images/og-image.webp',
 } = Astro.props;
 
 const fullTitle = title.includes('Balneario de Cofrentes')
@@ -31,6 +31,7 @@ const fullTitle = title.includes('Balneario de Cofrentes')
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content="balneario, cofrentes, longevidad, termalismo, medicina regenerativa, spa, valencia, tratamientos termales" />
+    <link rel="canonical" href={Astro.url.href} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -39,20 +40,30 @@ const fullTitle = title.includes('Balneario de Cofrentes')
     <meta property="og:site_name" content="Balneario de Cofrentes" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site ?? Astro.url).href} />
 
-    <!-- Fonts -->
+    <!-- Fonts (non-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://db.onlinewebfonts.com" crossorigin />
+    <link rel="preconnect" href="https://framerusercontent.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
     <link
       href="https://db.onlinewebfonts.com/c/c815be296ee18689fbee7a8c142aae46?family=Coconat"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript><link href="https://db.onlinewebfonts.com/c/c815be296ee18689fbee7a8c142aae46?family=Coconat" rel="stylesheet" /></noscript>
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/images/hero-piscina-termal.webp" as="image" type="image/webp" />
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json" />
@@ -70,8 +81,23 @@ const fullTitle = title.includes('Balneario de Cofrentes')
     <main>
       <slot />
     </main>
-    <Footer client:idle />
-    <ChatbotWidget client:idle />
+    <Footer client:visible />
+    <ChatbotWidget client:visible />
     <FloatingFormButton client:load />
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('revealed');
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      );
+      document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
+    </script>
   </body>
 </html>

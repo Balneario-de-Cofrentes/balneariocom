@@ -10,10 +10,10 @@ const html = parsed ? renderCleanedMarkdown(parsed.body) : '';
 ---
 
 <BaseLayout title="Instalaciones" description="Descubra las instalaciones del Balneario de Cofrentes: circuito termal, clínica de longevidad, hotel y más.">
-  <section class="bg-cream py-12 lg:py-20">
+  <section class="bg-cream py-16 lg:py-24">
     <div class="mx-auto max-w-4xl px-6 lg:px-10">
       <h1 class="font-display text-4xl lg:text-5xl text-charcoal mb-8">Instalaciones</h1>
-      <div class="prose prose-lg max-w-none font-body" set:html={html} />
+      <div data-reveal class="prose prose-lg max-w-none font-body" set:html={html} />
     </div>
   </section>
 </BaseLayout>

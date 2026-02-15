@@ -1,33 +1,227 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { parseContent } from '@/lib/markdown';
 
 const entries = await getCollection('programas');
+
+// Extract price from body for each entry
+const programsWithPrice = entries.map(entry => {
+  const parsed = parseContent(entry.body || '');
+  return { ...entry, price: parsed.price };
+});
+
+// Category definitions for display
+const categories = [
+  {
+    id: 'termalismo',
+    title: 'Termalismo Social',
+    description: 'Programas subvencionados IMSERSO y Termalismo Valenciano con pension completa y tratamientos termales.',
+    icon: '🏛️',
+  },
+  {
+    id: 'longevidad',
+    title: 'Longevidad y Medicina Avanzada',
+    description: 'Protocolos personalizados de longevidad, medicina regenerativa y detoxificacion molecular.',
+    icon: '🧬',
+  },
+  {
+    id: 'dolor',
+    title: 'Dolor e Inflamacion',
+    description: 'Tratamientos especializados para dolor musculo-esqueletico, articular y cronico.',
+    icon: '💪',
+  },
+  {
+    id: 'bienestar',
+    title: 'Bienestar y Belleza',
+    description: 'Programas de bienestar, belleza termal y escapadas para cuidar cuerpo y mente.',
+    icon: '🌿',
+  },
+];
+
+// Group programs by category
+const grouped = categories.map(cat => ({
+  ...cat,
+  programs: programsWithPrice.filter(p => p.data.category === cat.id),
+}));
+
+// IMSERSO is the featured program
+const imserso = programsWithPrice.find(p => p.data.slug === 'imserso-balneario');
 ---
 
-<BaseLayout title="Programas de Salud" description="Programas de salud y longevidad personalizados en el Balneario de Cofrentes.">
-  <section class="bg-cream py-20 lg:py-28">
-    <div class="mx-auto max-w-7xl px-6 lg:px-10">
-      <h1 class="font-display text-4xl lg:text-5xl text-charcoal mb-4">Programas</h1>
-      <p class="text-base font-body font-light text-warm-gray mb-12 max-w-2xl">
-        Programas de salud y longevidad personalizados
+<BaseLayout
+  title="Programas de Salud y Longevidad"
+  description="Descubre nuestros programas de termalismo IMSERSO, longevidad, dolor e inflamacion y bienestar termal. Desde 427€ con pension completa."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-navy py-24 lg:py-32">
+    <div class="absolute inset-0">
+      <img
+        src="/images/hero-piscina-termal.webp"
+        alt=""
+        class="hero-ken-burns h-full w-full object-cover opacity-20"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/80 to-navy"></div>
+    </div>
+    <div class="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
+      <span class="mb-4 inline-block text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-lime">
+        Balneario de Cofrentes
+      </span>
+      <h1 class="max-w-3xl text-4xl text-white sm:text-5xl lg:text-6xl">
+        Programas de Salud y Longevidad
+      </h1>
+      <p class="mt-5 max-w-2xl text-base font-body font-light leading-relaxed text-white/70">
+        Protocolos medicos especializados en un balneario con mas de 130 anos de historia.
+        Desde el termalismo IMSERSO hasta la medicina regenerativa de vanguardia.
       </p>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {entries.map(entry => (
-          <a
-            href={`/programas/${entry.data.slug}`}
-            class="group block rounded-2xl bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-          >
-            <h2 class="font-display text-xl text-charcoal group-hover:text-navy-light transition-colors">
-              {entry.data.title}
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a
+          href="#programas"
+          class="btn-press inline-flex items-center justify-center gap-2 rounded-full bg-lime px-7 py-3 text-[13px] font-body font-semibold text-navy transition-all duration-300 hover:bg-lime-dark"
+        >
+          Ver programas
+        </a>
+        <a
+          href="/programas/imserso-balneario"
+          class="btn-press inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-7 py-3 text-[13px] font-body font-semibold text-white transition-all duration-300 hover:bg-white/10"
+        >
+          Informacion IMSERSO
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured: IMSERSO -->
+  {imserso && (
+    <section class="bg-cream py-16 lg:py-24">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10">
+        <span class="mb-4 inline-block text-[11px] font-body font-semibold uppercase tracking-[0.2em] text-navy-light">
+          Programa mas solicitado
+        </span>
+        <a
+          href="/programas/imserso-balneario"
+          data-reveal
+          class="group block overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-lg lg:grid lg:grid-cols-2"
+        >
+          <div class="relative aspect-[16/10] overflow-hidden lg:aspect-auto">
+            <img
+              src={imserso.data.image || '/images/programas-piscina-imserso.webp'}
+              alt="Programa IMSERSO Balneario de Cofrentes"
+              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="eager"
+            />
+            <div class="absolute top-4 left-4">
+              <span class="rounded-full bg-coral px-4 py-1.5 text-xs font-body font-semibold text-white">
+                Subvencionado
+              </span>
+            </div>
+          </div>
+          <div class="flex flex-col justify-center p-8 lg:p-12">
+            <h2 class="text-3xl text-charcoal lg:text-4xl">
+              Programa IMSERSO
             </h2>
-            {entry.data.description && (
-              <p class="mt-2 text-sm font-body font-light text-warm-gray line-clamp-2">
-                {entry.data.description}
-              </p>
-            )}
-          </a>
-        ))}
+            <p class="mt-4 text-base font-body font-light leading-relaxed text-warm-gray">
+              9 noches en pension completa con consulta medica, tratamientos termales y actividades.
+              Gestionamos todo por usted, incluida la tramitacion del IMSERSO.
+            </p>
+            <div class="mt-6 flex items-baseline gap-2">
+              <span class="text-3xl text-navy font-display">427€</span>
+              <span class="text-sm font-body text-warm-gray">desde / persona</span>
+            </div>
+            <div class="mt-6">
+              <span class="inline-flex items-center gap-2 rounded-full bg-lime px-7 py-3 text-[13px] font-body font-semibold text-navy transition-all duration-300 group-hover:bg-lime-dark">
+                Solicitar plaza
+                <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- Programs by category -->
+  <section id="programas" class="bg-white py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-6 lg:px-10">
+      {grouped.map((cat, catIndex) => (
+        <div class:list={["pb-16 lg:pb-20", catIndex > 0 && "pt-16 lg:pt-20 border-t border-light-gray"]}>
+          <div class="mb-10 max-w-2xl">
+            <span class="mb-2 inline-block text-2xl">{cat.icon}</span>
+            <h2 class="text-3xl text-charcoal sm:text-4xl">
+              {cat.title}
+            </h2>
+            <p class="mt-3 text-base font-body font-light text-warm-gray">
+              {cat.description}
+            </p>
+          </div>
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-reveal-stagger>
+            {cat.programs.map((program, pi) => (
+              <a
+                href={`/programas/${program.data.slug}`}
+                data-reveal
+                style={`--reveal-i: ${pi}`}
+                class="group flex flex-col overflow-hidden rounded-2xl bg-cream transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              >
+                {program.data.image && (
+                  <div class="relative aspect-[16/10] overflow-hidden">
+                    <img
+                      src={program.data.image}
+                      alt={program.data.title}
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <div class="flex flex-1 flex-col p-6">
+                  <h3 class="text-xl text-charcoal group-hover:text-navy-light transition-colors">
+                    {program.data.title}
+                  </h3>
+                  {program.data.description && (
+                    <p class="mt-2 flex-1 text-sm font-body font-light text-warm-gray line-clamp-2">
+                      {program.data.description}
+                    </p>
+                  )}
+                  {program.price && (
+                    <p class="mt-4 text-lg font-display text-navy">
+                      {program.price}
+                    </p>
+                  )}
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-navy py-16 lg:py-24">
+    <div class="mx-auto max-w-3xl px-6 text-center lg:px-10">
+      <h2 class="text-3xl text-white sm:text-4xl">
+        ¿No sabe que programa elegir?
+      </h2>
+      <p class="mt-4 text-base font-body font-light text-white/70">
+        Nuestro equipo medico le asesorara sin compromiso. Cuentenos su situacion y le recomendaremos el programa mas adecuado.
+      </p>
+      <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+        <a
+          href="/reserva"
+          class="btn-press inline-flex items-center justify-center rounded-full bg-lime px-7 py-3 text-[13px] font-body font-semibold text-navy transition-all duration-300 hover:bg-lime-dark"
+        >
+          Solicitar informacion
+        </a>
+        <a
+          href="https://wa.me/34662359976"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-press inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-7 py-3 text-[13px] font-body font-semibold text-white transition-all duration-300 hover:bg-white/10"
+        >
+          WhatsApp: 662 35 99 76
+        </a>
       </div>
     </div>
   </section>

@@ -899,10 +899,10 @@ export default function ProgramWizard() {
             <div className="mt-4">
               <button
                 onClick={prevStep}
-                className="flex items-center gap-2 text-sm font-body text-warm-gray hover:text-charcoal transition-colors"
+                className="flex min-h-[44px] items-center gap-2 text-sm font-body text-warm-gray hover:text-charcoal transition-colors"
               >
                 <ArrowLeft size={14} />
-                Volver atras
+                Volver atrás
               </button>
             </div>
           )}
